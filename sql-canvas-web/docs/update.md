@@ -4,8 +4,6 @@ title: Perform Data Update
 sidebar_label: Update
 ---
 
-export const Image = ({src, alt}) => (<img src={src} alt={alt}/>);
-
 ## INSERT
 
 To **INSERT** an object to the database, perform the following steps:
@@ -15,7 +13,7 @@ To **INSERT** an object to the database, perform the following steps:
 3. Right-click on the mockup object and click on **Commit Insert/Update**. Popup **Confirm Execution Statement** will be displayed.
 4. Verify the SQL statement and click **Submit and Save**.
 
-<img src="./images/insert.gif" alt="Demo INSERT"/>
+<img src="./images/demo_insert.gif" alt="Demo INSERT"/>
 
 > The followings fields are read-only and do not need user input: **_@NEXTID_** for auto increment column, **_@AUTO_POPULATED_** for auto populated columns (e.g.row timestamp).
 > Save file will be immediately save to preserve the data and avoid confusion on turn to save file.
@@ -29,7 +27,7 @@ To **UPDATE** an object to the database, perform the following steps:
 3. Right-click on the updated object and click on **Commit Insert/Update**. Popup **Confirm Execution Statement** will be displayed.
 4. Verify the SQL statement and click **Submit and Save**.
 
-<img src="./images/update.gif" alt="Demo UPDATE"/>
+<img src="./images/demo_update.gif" alt="Demo UPDATE"/>
 
 > Note: Primary Keys fields and certain read-only fields (e.g. row timestamp) will return error on editing.
 > Save file will be immediately save to preserve the data and avoid confusion on turn to save file.
@@ -41,6 +39,6 @@ To **DELETE** an object to the database, perform the following steps:
 1. Right-click on the selected object(s) and click **Delete From**. Popup **Confirm Execution Statement** will be displayed.
 2. Verify the SQL statement and click **Submit and Save**.
 
-<img src="./images/delete.gif" alt="Demo DELETE"/>
+<img src="./images/demo_delete.gif" alt="Demo DELETE"/>
 
 > Note: If CASCADE is allowed on **DELETE**, all child objects of selected object(s) will also be **DELETE**. Make sure you know what you are doing.

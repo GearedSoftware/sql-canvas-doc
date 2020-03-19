@@ -15,7 +15,7 @@ module.exports = {
       links: [
         {to: 'https://master.test.sqlcanvas.gearedserver.com', label: 'Demo', position: 'left', target: "#blank"},
         {to: 'docs/intro', label: 'Docs', position: 'left'},
-        {to: 'docs/select', label: 'Tutorials', position: 'left'},
+        {to: 'docs/connection', label: 'Tutorials', position: 'left'},
         {
           href: 'https://github.com/gearedsoftware/sql-canvas',
           label: 'GitHub',
@@ -39,7 +39,7 @@ module.exports = {
             },
             {
               label: 'Tutorials',
-              to: 'docs/select',
+              to: 'docs/connection',
             },
           ],
         },

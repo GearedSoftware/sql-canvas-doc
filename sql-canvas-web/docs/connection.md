@@ -4,14 +4,12 @@ title: Connections
 sidebar_label: Connections
 ---
 
-export const Image = ({src, alt}) => (<img src={src} alt={alt}/>);
-
 ## Add New
 In the Browser tab, right-click **Connections** and select **Add New Connection**, or click the __+__ button. A popup will appear for you to select the database type and enter the connection details:
 
 Alternatively, click the __+__ card on the Welcome page.
 
-<Image src="./images/connection_add.png" alt="Add Connection Popup"/>
+<img src="./images/connection_add.png" alt="Add Connection Popup"/>
 
 
 Click **Test Connection** to perform a test or click **Submit** to add Connection to Browser list
