@@ -4,14 +4,13 @@ pipeline {
     agent any
     environment {
         //APP_NAME must be lowercase to be URL?
-        APP_NAME='doc.sqlcanvas';
+        APP_NAME='sqlcanvas';
         UI_DIR='sql-canvas-web'
-        REACT_APP_NGINX_SITE_TEMPLATE="nginx.site.template";
     }
     stages {
         stage('Environment'){
             steps {
-                setUIAPIEnv("${env.APP_NAME}");
+				setUIDocsEnv();
             }
         }
         stage('Clean') {
@@ -26,7 +25,6 @@ pipeline {
                 //this is for more generic build apps where react and API co-exist
                 sh "npm ci --prefix ./${env.UI_DIR}/"
                 sh "npm run build --prefix ./${env.UI_DIR}/"                
-                sh "tar -zcvf ./deploy/${env.UI_TAR} -C ./${env.UI_BUILD}/ ."
             }
         }
         stage('Deploy UI') {
