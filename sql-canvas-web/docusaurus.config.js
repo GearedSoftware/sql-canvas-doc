@@ -17,7 +17,7 @@ module.exports = {
         {to: 'docs/tutorials/connection', label: 'Tutorials', position: 'left'},
         {to: 'docs/api/connection', label: 'APIs', position: 'left'},
         {
-          href: 'https://master.test.sqlcanvas.gearedserver.com', 
+          href: 'https://master.test.sqlcanvas.app', 
           label: 'Demo', 
           position: 'right',
         },
