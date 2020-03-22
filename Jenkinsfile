@@ -25,8 +25,7 @@ pipeline {
                 sh 'printenv | sort'                
                 //this is for more generic build apps where react and API co-exist
                 sh "npm ci --prefix ./${env.UI_DIR}/"
-                sh "npm run build --prefix ./${env.UI_DIR}/"
-                sh "cp ./${env.UI_BUILD}"
+                sh "npm run build --prefix ./${env.UI_DIR}/"                
                 sh "tar -zcvf ./deploy/${env.UI_TAR} -C ./${env.UI_BUILD}/ ."
             }
         }
