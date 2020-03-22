@@ -3,7 +3,6 @@
 pipeline {
     agent any
     environment {
-        //APP_NAME must be lowercase to be URL?
         APP_NAME='sqlcanvas';
         UI_DIR='sql-canvas-web'
     }
@@ -11,12 +10,6 @@ pipeline {
         stage('Environment'){
             steps {
 				setUIDocsEnv();
-            }
-        }
-        stage('Clean') {
-            steps {
-                sh "sudo rm -rf ./${env.UI_BUILD} || true"
-                sh "sudo rm -rf ./deploy || true && mkdir -p ./deploy"
             }
         }
         stage('Build UI') {
