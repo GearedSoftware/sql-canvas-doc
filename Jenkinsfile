@@ -12,6 +12,11 @@ pipeline {
 				setUIDocsEnv();
             }
         }
+        stage('Clean') {
+            steps {
+                sh "sudo rm -rf ${env.DEPLOYMENT_PATH} || true"
+            }
+        }
         stage('Build UI') {
             steps {
                 sh 'printenv | sort'                
@@ -28,6 +33,8 @@ pipeline {
                 restartNGINX()
                 sh "sudo [ -e '${NGINX_SSL_CERTIFICATE_KEY_SPECIFIC}' ] && echo 'Cert for ${env.NGINX_SERVER_NAME} already exists' || sudo certbot certonly --nginx -d ${env.NGINX_SERVER_NAME}"
 				//copy build
+				sh "mkdir -p ${env.DEPLOYMENT_PATH}"
+                sh "chmod -R 775 ${env.DEPLOYMENT_PATH}"
                 sh "cp -rf ./${UI_DIR}/build/* ${env.DEPLOYMENT_PATH}"
                 //restart nginx and create a template.site file
                 createNGINXSiteFile "${env.NGINX_SITE_FILE}"
