@@ -9,7 +9,7 @@ sidebar_label: Files & Folder
 
 To create a new **File**, right-click the **_saved_** folder under a connection or a folder, and click **New File**. Type in a desired name and press **Enter**
 
-![Demo File](../images/demo_file_add.gif)
+![Demo File](/img/docs/demo_file_add.gif)
 
 Alternative from the **Welcome** tab, click **Open** button on a connected Card to create a new file at root (i.e. connection's _saved_ folder)
 

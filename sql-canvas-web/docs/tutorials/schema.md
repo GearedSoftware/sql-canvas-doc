@@ -12,7 +12,7 @@ To view a _Schema_ and its objects, perform the following steps:
 2. Connect to a database. A List of schema will be list under the connection name/alias
 3. Double-click on a schema to open it on Canvas
 
-![Demo Schema](../images/demo_schema.gif)
+![Demo Schema](/img/docs/demo_schema.gif)
 
 ## Save Schema View
 

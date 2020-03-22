@@ -8,24 +8,24 @@ sidebar_label: Select
 
 Right-click on a canvas and select **Import by SQL** and select clause in the **Create a Select Statement** popup:
 
-![Demo SELECT Builder](../images/demo_select_builder.gif)
+![Demo SELECT Builder](/img/docs/demo_select_builder.gif)
 
 ##### SELECT Clause
-![SELECT Clause](../images/select_builder_SELECT.png)
+![SELECT Clause](/img/docs/select_builder_SELECT.png)
 
 Type of Select to perform
 * Options: OBJECTs, COUNT
 * Default: OBJECTs
 
 ##### FROM Clause
-![FROM Clause](../images/select_builder_FROM.png)
+![FROM Clause](/img/docs/select_builder_FROM.png)
 
 Table to start the Select from, dropdown will list all available tables within the selected _Schema_. Notation (i.e. **A**) at the end will be the table Alias. 
 * Button **+** : Add a _JOIN_ Clause
 * Button **-** : Clear _FROM_ Clause
 
 ##### JOIN Clause (if has)
-![JOIN Clause](../images/select_builder_JOIN.png)
+![JOIN Clause](/img/docs/select_builder_JOIN.png)
 
 There are 3 parts which form a _JOIN_ Clause:
 
@@ -36,7 +36,7 @@ There are 3 parts which form a _JOIN_ Clause:
 * Button -: Remove _JOIN_ Clause on the same line
 
 ##### WHERE Clause
-![WHERE Clause](../images/select_builder_WHERE.png)
+![WHERE Clause](/img/docs/select_builder_WHERE.png)
 
 There are 3 parts which form a _WHERE_ Clause:
 
@@ -50,7 +50,7 @@ There are 3 parts which form a _WHERE_ Clause:
 * Button -: Remove _WHERE_ Clause on the same line
 
 ##### ORDER Clause
-![ORDER Clause](../images/select_builder_ORDER.png)
+![ORDER Clause](/img/docs/select_builder_ORDER.png)
 
 There are 2 parts which form an _ORDER_ Clause:
 
@@ -61,7 +61,7 @@ There are 2 parts which form an _ORDER_ Clause:
 * Button -: Remove _ORDER_ Clause on the same line
 
 ##### FETCH Clause
-![FETCH Clause](../images/select_builder_FETCH.png)
+![FETCH Clause](/img/docs/select_builder_FETCH.png)
 
 Number of records to return. Default: **50**
 
@@ -69,7 +69,7 @@ Number of records to return. Default: **50**
 
 Right-click an object and click on "Import Parent" or "Import Child", sub context menu will show all the parents/childs link to the selected object type by foreign key. Click on one of the table name will retrieve all the object with the same type, using selected object as filter condition base on its foreign key.
 
-![Demo Select Import Parent/Child](../images/demo_select_import.gif)
+![Demo Select Import Parent/Child](/img/docs/demo_select_import.gif)
 
 > Note: When multiple objects of different types are selected, the **Import Child** and **Import Parent** will be performed for all selected objects with the same type with the right-clicked object type.
 
@@ -77,7 +77,7 @@ Right-click an object and click on "Import Parent" or "Import Child", sub contex
 
 When multiple objects of different types are selected, the **Import Child** and **Import Parent** will be performed for all selected objects with the same type of the right-clicked object.
 
-![ Clause](../images/demo_select_import_multiple.gif)Select Import Multiple"/>
+![ Clause](/img/docs/demo_select_import_multiple.gif)Select Import Multiple"/>
 
 > Note: When large number of childs return, they can be overlapped each other. Right-click the parent object, and click **Select Child** to help move all the child as once.  
 

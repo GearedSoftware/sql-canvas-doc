@@ -14,7 +14,7 @@ There are different ways to **Select** objects in Canvas:
 4. Right-click on an object to open the Context Menu and click on **Select Child**, click on a _Child Object Type_ or _**All Childs**_ to add the childs to the current selections.
 5. Right-click on Canvas to open the Context Menu, click on **Select All** or _**Ctrl+A**_ to select all objects in Canvas.
 
-![Demo Canvas Select](../images/demo_canvas_select.gif)
+![Demo Canvas Select](/img/docs/demo_canvas_select.gif)
 
 To de-select:
 
@@ -38,6 +38,6 @@ There are different ways tp **Remove** objects from Canvas:
 2. Right-click on an object to open its Context Menu, click on **Remove** to remove it and all current selected objects.
 3. Right-click on Canvas to open the Context Menu, click on **Clear All** and click **OK** on the Confirm popup to remove all objects on Canvas.
 
-![Demo Canvas Delete](../images/demo_canvas_delete.gif)
+![Demo Canvas Delete](/img/docs/demo_canvas_delete.gif)
 
 > Note: This action does not affect the data, it only remove the object(s) from view, to **DELETE** an object see [Perform Data Update](./update#delete)

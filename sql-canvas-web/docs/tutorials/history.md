@@ -11,7 +11,7 @@ All executed _SQL Statements_ of the current section are stored and can be acces
 1. Select **History** on the sidebar to open the **History** view.
 2. Double-click on a line under a _Connection Name_ to view that history
 
-![Demo History](../images/demo_history.gif)
+![Demo History](/img/docs/demo_history.gif)
 
 > Note: When multiple object types were return (i.e. from SELECT Builder), multiple _tab_ will be shown for each object type in **Bottom** View
 
