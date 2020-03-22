@@ -13,9 +13,14 @@ module.exports = {
         src: 'img/sqlCanvasLogo.png',
       },
       links: [
-        {to: 'https://master.test.sqlcanvas.gearedserver.com', label: 'Demo', position: 'left', target: "#blank"},
         {to: 'docs/intro', label: 'Docs', position: 'left'},
-        {to: 'docs/connection', label: 'Tutorials', position: 'left'},
+        {to: 'docs/tutorials/connection', label: 'Tutorials', position: 'left'},
+        {to: 'docs/api/connection', label: 'APIs', position: 'left'},
+        {
+          href: 'https://master.test.sqlcanvas.gearedserver.com', 
+          label: 'Demo', 
+          position: 'right',
+        },
         {
           href: 'https://github.com/gearedsoftware/sql-canvas',
           label: 'GitHub',

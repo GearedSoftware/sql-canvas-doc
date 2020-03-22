@@ -9,7 +9,7 @@ In the Browser tab, right-click **Connections** and select **Add New Connection*
 
 Alternatively, click the __+__ card on the Welcome page.
 
-<img src="./images/connection_add.png" alt="Add Connection Popup"/>
+![Add Connection Popup](../images/connection_add.png)
 
 
 Click **Test Connection** to perform a test or click **Submit** to add Connection to Browser list

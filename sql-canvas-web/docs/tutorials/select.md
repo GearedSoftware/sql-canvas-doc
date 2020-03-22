@@ -4,28 +4,28 @@ title: Perform SELECT
 sidebar_label: Select
 ---
 
-## SQL Select Builder
+## SQL SELECT Builder
 
-On Open Canvas, right-click and select **Import by SQL** and select clause in the **Create a Select Statement** popup:
+Right-click on a canvas and select **Import by SQL** and select clause in the **Create a Select Statement** popup:
 
-<img src="./images/demo_select_builder.gif" alt="Demo Select Builder"/>
+![Demo SELECT Builder](../images/demo_select_builder.gif)
 
 ##### SELECT Clause
-<img src="./images/select_builder_SELECT.png" alt="Select Builder SELECT"/>
+![SELECT Clause](../images/select_builder_SELECT.png)
 
 Type of Select to perform
 * Options: OBJECTs, COUNT
 * Default: OBJECTs
 
 ##### FROM Clause
-<img src="./images/select_builder_FROM.png" alt="Select Builder FROM"/>
+![FROM Clause](../images/select_builder_FROM.png)
 
 Table to start the Select from, dropdown will list all available tables within the selected _Schema_. Notation (i.e. **A**) at the end will be the table Alias. 
 * Button **+** : Add a _JOIN_ Clause
 * Button **-** : Clear _FROM_ Clause
 
 ##### JOIN Clause (if has)
-<img src="./images/select_builder_JOIN.png" alt="Select Builder JOIN"/>
+![JOIN Clause](../images/select_builder_JOIN.png)
 
 There are 3 parts which form a _JOIN_ Clause:
 
@@ -36,7 +36,7 @@ There are 3 parts which form a _JOIN_ Clause:
 * Button -: Remove _JOIN_ Clause on the same line
 
 ##### WHERE Clause
-<img src="./images/select_builder_WHERE.png" alt="Select Builder WHERE"/>
+![WHERE Clause](../images/select_builder_WHERE.png)
 
 There are 3 parts which form a _WHERE_ Clause:
 
@@ -50,7 +50,7 @@ There are 3 parts which form a _WHERE_ Clause:
 * Button -: Remove _WHERE_ Clause on the same line
 
 ##### ORDER Clause
-<img src="./images/select_builder_ORDER.png" alt="Select Builder ORDER"/>
+![ORDER Clause](../images/select_builder_ORDER.png)
 
 There are 2 parts which form an _ORDER_ Clause:
 
@@ -61,7 +61,7 @@ There are 2 parts which form an _ORDER_ Clause:
 * Button -: Remove _ORDER_ Clause on the same line
 
 ##### FETCH Clause
-<img src="./images/select_builder_FETCH.png" alt="Select Builder FETCH"/>
+![FETCH Clause](../images/select_builder_FETCH.png)
 
 Number of records to return. Default: **50**
 
@@ -69,15 +69,21 @@ Number of records to return. Default: **50**
 
 Right-click an object and click on "Import Parent" or "Import Child", sub context menu will show all the parents/childs link to the selected object type by foreign key. Click on one of the table name will retrieve all the object with the same type, using selected object as filter condition base on its foreign key.
 
-<img src="./images/demo_select_import.gif" alt="Select Import Parent Child"/>
+![Demo Select Import Parent/Child](../images/demo_select_import.gif)
 
 > Note: When multiple objects of different types are selected, the **Import Child** and **Import Parent** will be performed for all selected objects with the same type with the right-clicked object type.
 
-> Note: **Import All Child** and **Import All Parent** will return all type of child or parent. _Caution: large number of child/parent can lead to long way time_
+> Note: **Import All Child** and **Import All Parent** will return all type of child or parent. **Caution**: _large number of child/parent can lead to long wait time_.
+
+When multiple objects of different types are selected, the **Import Child** and **Import Parent** will be performed for all selected objects with the same type of the right-clicked object.
+
+![ Clause](../images/demo_select_import_multiple.gif)Select Import Multiple"/>
+
+> Note: When large number of childs return, they can be overlapped each other. Right-click the parent object, and click **Select Child** to help move all the child as once.  
 
 ## Refresh
 
-1. Right-click on selected object(s) and click on "Refresh". 
-2. Right-click on _Canvas_ click on "Refresh All". 
+1. Right-click on selected object(s) and click on **Refresh**. 
+2. Right-click on _Canvas_ click on **Refresh All**.
 
 Objects will be refreshed by perform a _SELECT_ using object's primary key(s). If object(s) is no longer exist, they will be removed from canvas.

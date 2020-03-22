@@ -7,8 +7,8 @@
 
 module.exports = {
   someSidebar: {
-    Docusaurus: ['doc1', 'mdx'],
     Docs: ['intro', 'installation'],
-    Tutorials: ['connection','canvas','select', 'update','file','schema','history'],
+    Tutorials: ['tutorials/canvas','tutorials/connection','tutorials/history','tutorials/file','tutorials/schema','tutorials/select', 'tutorials/update'],
+    APIs: ['api/connection', 'api/data', 'api/schema', 'api/sql'],
   },
 };
