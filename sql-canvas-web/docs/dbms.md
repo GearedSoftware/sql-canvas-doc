@@ -4,6 +4,7 @@ title: DBMS Supports
 sidebar_label: DBMS Supports
 ---
 
+Below is the list of Database Management System which are currently supported by SQL Canvas. For Database Version Supports, please see its plugin's documentations
 
 
 ## MySQL <img height="25" alt="Postgre Logo" src="https://upload.wikimedia.org/wikipedia/en/thumb/6/62/MySQL.svg/136px-MySQL.svg.png"/>
