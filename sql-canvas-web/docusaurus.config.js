@@ -41,11 +41,15 @@ module.exports = {
             },
             {
               label: 'Tutorials',
-              to: 'docs/connection',
+              to: 'docs/tutorials/connection',
             },
             {
               label: 'APIs',
-              to: 'docs/api',
+              to: 'docs/api/connection',
+            },
+            {
+              label: 'Knowledge Base',
+              to: 'docs/knowledge/mysql',
             },
           ],
         },
