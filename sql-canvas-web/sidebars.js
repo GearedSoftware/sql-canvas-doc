@@ -7,7 +7,7 @@
 
 module.exports = {
   someSidebar: {
-    Docs: ['intro', 'installation'],
+    Docs: ['installation', 'dbms'],
     Tutorials: ['tutorials/canvas','tutorials/connection','tutorials/history','tutorials/file','tutorials/schema','tutorials/select', 'tutorials/update'],
     APIs: ['api/connection', 'api/data', 'api/schema', 'api/sql'],
   },
