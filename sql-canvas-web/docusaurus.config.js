@@ -1,6 +1,6 @@
 module.exports = {
   title: 'SQL Canvas',
-  tagline: 'Nam iaculis et lectus ac blandit. Fusce tempus euismod velit, eget maximus dui condimentum aliquet. Sed efficitur, nisi luctus aliquam rhoncus, ipsum tellus pellentesque est, eget pulvinar diam risus nec est. Donec sollicitudin mauris sapien, id scelerisque libero ultricies quis. Cras faucibus.',
+  tagline: 'A less-typing SQL Database Browser, where objects and their relationships are displayed on a Canvas rather than a traditional tabular format.',
   url: 'https://sqlcanvas.com',
   baseUrl: '/',
   favicon: 'img/sqlCanvasBadge.png',
@@ -13,7 +13,7 @@ module.exports = {
         src: 'img/sqlCanvasLogo.png',
       },
       links: [
-        {to: 'docs/intro', label: 'Docs', position: 'left'},
+        {to: 'docs/dbms', label: 'Docs', position: 'left'},
         {to: 'docs/tutorials/connection', label: 'Tutorials', position: 'left'},
         {to: 'docs/api/connection', label: 'APIs', position: 'left'},
         {
@@ -21,11 +21,11 @@ module.exports = {
           label: 'Demo', 
           position: 'right',
         },
-        {
-          href: 'https://github.com/gearedsoftware/sql-canvas',
-          label: 'GitHub',
-          position: 'right',
-        },
+        // {
+        //   href: 'https://github.com/gearedsoftware/sql-canvas',
+        //   label: 'GitHub',
+        //   position: 'right',
+        // },
       ],
     },
     footer: {
@@ -35,49 +35,45 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Style Guide',
-              to: 'docs/doc1',
-            },
-            {
               label: 'Docs',
-              to: 'docs/intro',
+              to: 'docs/dbms',
             },
             {
               label: 'Tutorials',
               to: 'docs/connection',
             },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'APIs',
+              to: 'docs/api',
             },
           ],
         },
-        {
-          title: 'Social',
-          items: [
-            {
-              label: 'Blog',
-              to: 'blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
-          ],
-        },
+        // {
+        //   title: 'Community',
+        //   items: [
+        //     {
+        //       label: 'Stack Overflow',
+        //       href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+        //     },
+        //     {
+        //       label: 'Discord',
+        //       href: 'https://discordapp.com/invite/docusaurus',
+        //     },
+        //   ],
+        // },
+        // {
+        //   title: 'Social',
+        //   items: [
+        //     {
+        //       label: 'Blog',
+        //       to: 'blog',
+        //     },
+        //     {
+        //       label: 'GitHub',
+        //       href: 'https://github.com/gearedsoftware/sql-canvas',
+        //     },
+        //   ],
+        // },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} SQL Canvas, Inc. Built with Docusaurus.`,
     },
@@ -88,8 +84,7 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+          // editUrl: 'https://github.com/facebook/docusaurus/edit/master/website/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

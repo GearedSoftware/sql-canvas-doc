@@ -8,48 +8,67 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    title: <>Easy to Use</>,
-    imageUrl: 'img/undraw_docusaurus_mountain.svg',
+    title: <>SQL Builder</>,
+    imageUrl: 'img/docs/demo_select_builder.gif',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Quickly build a SQL using our SQL Builder, from simple 
+        to complex statement to retrieve data then browse through objects
+        and their relationship with ease. 
       </>
     ),
   },
   {
-    title: <>Focus on What Matters</>,
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
+    title: <>File Sync</>,
+    imageUrl: 'img/undraw_file_sync_ot38.svg',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Save your Canvas, Schema View and Customizations to view on any devices
       </>
-    ),
+    )
   },
   {
-    title: <>Powered by React</>,
+    title: <>Collaborations</>,
+    imageUrl: 'img/undraw_real_time_collaboration_c62i.svg',
+    description: (
+      <>
+        Share your Canvas saves, customizations or custom SQLs with others. 
+      </>
+    )
+  },
+  {
+    title: <>Multiple DBMS Support</>,
     imageUrl: 'img/undraw_docusaurus_react.svg',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Support the most common used DBMS including MySQL, SQLServer, Postgre, and 
+        more to come
       </>
-    ),
+    )
   },
 ];
 
-function Feature({imageUrl, title, description}) {
+function Feature({imageUrl, title, description, rtl}) {
   const imgUrl = useBaseUrl(imageUrl);
-  return (
-    <div className={classnames('col col--4', styles.feature)}>
+  const imgDiv = (
+    <div className={classnames('col col--8', styles.feature)}>
       {imgUrl && (
-        <div className="text--center">
+        <div>
           <img className={styles.featureImage} src={imgUrl} alt={title} />
         </div>
-      )}
+      )}      
+    </div>
+  )
+  const txtDiv = (
+    <div className={classnames('col col--4', styles.feature)}>
       <h3>{title}</h3>
       <p>{description}</p>
+    </div>
+  )
+  return (    
+    <div className={classnames('row', styles.heroBanner)}> 
+      {rtl ? imgDiv : txtDiv}
+      {rtl ? txtDiv : imgDiv}
     </div>
   );
 }
@@ -63,7 +82,10 @@ function Home() {
       description="Description will go into a meta tag in <head />">
       <header className={classnames('hero hero--primary', styles.heroBanner)}>
         <div className="container">
-          <h1 className="hero__title">{siteConfig.title}</h1>
+          <div style={{display: "flex"}}>
+            <img src={'img/sqlCanvasIcon.png'} alt={"Icon"} height="60"/>
+            <h1 className="hero__title">{siteConfig.title}</h1>
+          </div>          
           <p className="hero__subtitle">{siteConfig.tagline}</p>
           <div className={styles.buttons}>
             <Link
@@ -71,8 +93,8 @@ function Home() {
                 'button button--outline button--secondary button--lg',
                 styles.getStarted,
               )}
-              to={useBaseUrl('docs/intro')}>
-              Get Started
+              to={useBaseUrl('docs/installation')}>
+              Try It Now
             </Link>
           </div>
         </div>
@@ -81,9 +103,9 @@ function Home() {
         {features && features.length && (
           <section className={styles.features}>
             <div className="container">
-              <div className="row">
+              <div className="column">
                 {features.map((props, idx) => (
-                  <Feature key={idx} {...props} />
+                  <Feature key={idx} {...props} rtl={idx % 2 === 1} />
                 ))}
               </div>
             </div>
