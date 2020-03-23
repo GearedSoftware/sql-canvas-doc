@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'SQL Canvas',
-  tagline: 'A less-typing SQL Database Browser, where objects and their relationships are displayed on a Canvas rather than a traditional tabular format.',
+  title: 'SQL Canvas (Beta)',
+  tagline: 'A less-typing, more-dragging SQL Database Browser, where objects and their relationships are displayed on a Canvas rather than a traditional tabular format.',
   url: 'https://sqlcanvas.com',
   baseUrl: '/',
   favicon: 'img/sqlCanvasBadge.png',
@@ -16,6 +16,7 @@ module.exports = {
         {to: 'docs/dbms', label: 'Docs', position: 'left'},
         {to: 'docs/tutorials/connection', label: 'Tutorials', position: 'left'},
         {to: 'docs/api/connection', label: 'APIs', position: 'left'},
+        {to: 'docs/knowledge/mysql', label: 'Knowledge Base', position: 'left'},
         {
           href: 'https://master.test.sqlcanvas.app', 
           label: 'Demo', 

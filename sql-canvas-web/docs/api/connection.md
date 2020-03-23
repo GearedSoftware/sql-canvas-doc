@@ -4,6 +4,7 @@ title: Route /api/connections
 sidebar_label: /connections
 ---
 
+
 | Type | Route         | Description                                                            | Auth| Request | Response |
 | ---- | --------------| ---------------------------------------------------------------------- |:---:| ------- | -------- |
 | POST | ./connections/connect    | Connect and return the Auth Token for the connection request| NO  | ConnObjectType | {success: boolean, token: string} |
