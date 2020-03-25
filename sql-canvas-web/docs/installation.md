@@ -4,7 +4,7 @@ title: Installation
 ---
 ## Linux
 
-1. Download the [app file](https://docusaurus.io).
+1. Download the latest [tar file](https://packages.sqlcanvas.app/linux).
 
 2. Put the app file in the location of your choice.
 
@@ -30,6 +30,6 @@ USER_DATA_PATH=./data
 
 ## Windows
 
-1. Download the [installation file](https://docusaurus.io).
+1. Download the latest [zip file](https://packages.sqlcanvas.app/win).
 
 2. Follow the installation wizard.
