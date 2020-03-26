@@ -53,6 +53,19 @@ module.exports = {
             },
           ],
         },
+        {
+          title: 'About',
+          items: [
+            {
+              label: 'Terms & Conditions',
+              to: 'docs/tc',
+            },
+            {
+              label: 'Contact Us',
+              href: 'mailto:long@gearedsoftware.com?Subject=SQLCanvas ',
+            },
+          ],
+        },
         // {
         //   title: 'Community',
         //   items: [
