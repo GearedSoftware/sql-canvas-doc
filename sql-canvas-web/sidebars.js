@@ -8,7 +8,7 @@
 module.exports = {
   someSidebar: {
     Docs: ['dbms', 'installation'],
-    Tutorials: ['tutorials/canvas','tutorials/connection','tutorials/customization','tutorials/history','tutorials/file','tutorials/schema','tutorials/select', 'tutorials/update'],
+    Tutorials: ['tutorials/canvas','tutorials/connection','tutorials/customization','tutorials/history','tutorials/file','tutorials/schema','tutorials/save','tutorials/select', 'tutorials/update'],
     APIs: ['api/connection', 'api/data', 'api/schema', 'api/sql'],
     "Knowledge Base": ['knowledge/mysql', 'knowledge/mssql', 'knowledge/postgre'],
   },
