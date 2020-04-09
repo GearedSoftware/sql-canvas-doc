@@ -6,33 +6,40 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 
-const features = [
+const features = [  
+  {
+    title: <>Visualise Data</>,
+    imageUrl: 'img/docs/demo_canvas_select.gif',
+    description: (
+      <>
+        Visualise your data objects and relationships with an interactive HTML canvas allowing you to access, discover and investigate your databases.
+      </>
+    ),
+  },
   {
     title: <>SQL Builder</>,
     imageUrl: 'img/docs/demo_select_builder.gif',
     description: (
       <>
-        Quickly build a SQL using our SQL Builder, from simple 
-        to complex statement to retrieve data then browse through objects
-        and their relationship with ease. 
+        Quickly build Structured Query Language (SQL) using our SQL Builder covering simple to complex statements to retrieve data, visually browse data objects and discover relationships with ease.
       </>
     ),
   },
   {
-    title: <>File Sync</>,
+    title: <>Data Integration</>,
     imageUrl: 'img/undraw_file_sync_ot38.svg',
     description: (
       <>
-        Save your Canvas, Schema View and Customizations to view on any devices
+        Integrate your findings with existing business processes by exporting your data and relationships in various formats including xml, csv, json and xlsx.
       </>
     )
   },
   {
-    title: <>Collaborations</>,
+    title: <>Centralised Data</>,
     imageUrl: 'img/undraw_real_time_collaboration_c62i.svg',
     description: (
       <>
-        Share your Canvas saves, customizations or custom SQLs with others. 
+        Utilising a secure centralised host access point we enable to your data and visual canvas on any device to help others in your organisation understand your data findings.
       </>
     )
   },
@@ -41,8 +48,7 @@ const features = [
     imageUrl: 'img/undraw_docusaurus_react.svg',
     description: (
       <>
-        Support the most common used DBMS including MySQL, SQLServer, Postgre, and 
-        more to come
+        We support the most common used DBMS including MySQL, Microsoft SQL and Postgresql with an ever-increasing pipeline of development to cover IBM DB2, Oracle, SAP HANA and MongoDb.
       </>
     )
   },

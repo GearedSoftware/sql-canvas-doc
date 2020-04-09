@@ -28,3 +28,11 @@ Right-click a **File/Folder** and select **Rename**.
 ## Delete
 
 Right-click a **File/Folder** and select **Delete**.
+
+## Share
+
+To Share a Canvas file, right-click on the file, and click **Get Shareable Link**, click **Copy Link to Clipboard**.
+
+![Demo Share](/img/docs/demo_share_file.gif)
+
+> Note: Anyone which this link can make a copy of your canvas, they do need database access (of their own), however.
