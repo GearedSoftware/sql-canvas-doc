@@ -1,33 +1,37 @@
 import React from 'react';
+import Popup from "reactjs-popup";
 import classnames from 'classnames';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
+import './modal.css';
 
 const features = [  
   {
     title: <>Visualise Data</>,
-    imageUrl: 'img/docs/demo_canvas_select.gif',
+    imageUrl: 'img/landing/minhhoa1.png',
     description: (
       <>
         Visualise your data objects and relationships with an interactive HTML canvas allowing you to access, discover and investigate your databases.
       </>
     ),
+    demo: "img/docs/demo_select_import.gif"
   },
   {
     title: <>SQL Builder</>,
-    imageUrl: 'img/docs/demo_select_builder.gif',
+    imageUrl: 'img/landing/minhhoa2.png',
     description: (
       <>
         Quickly build Structured Query Language (SQL) using our SQL Builder covering simple to complex statements to retrieve data, visually browse data objects and discover relationships with ease.
       </>
     ),
+    demo: "img/docs/demo_select_builder.gif"
   },
   {
     title: <>Data Integration</>,
-    imageUrl: 'img/undraw_file_sync_ot38.svg',
+    imageUrl: 'img/landing/minhhoa4.png',
     description: (
       <>
         Integrate your findings with existing business processes by exporting your data and relationships in various formats including xml, csv, json and xlsx.
@@ -36,7 +40,7 @@ const features = [
   },
   {
     title: <>Centralised Data</>,
-    imageUrl: 'img/undraw_real_time_collaboration_c62i.svg',
+    imageUrl: 'img/landing/minhhoa3.png',
     description: (
       <>
         Utilising a secure centralised host access point we enable to your data and visual canvas on any device to help others in your organisation understand your data findings.
@@ -45,7 +49,7 @@ const features = [
   },
   {
     title: <>Multiple DBMS Support</>,
-    imageUrl: 'img/undraw_docusaurus_react.svg',
+    imageUrl: 'img/landing/minhhoa5.png',
     description: (
       <>
         We support the most common used DBMS including MySQL, Microsoft SQL and Postgresql with an ever-increasing pipeline of development to cover IBM DB2, Oracle, SAP HANA and MongoDb.
@@ -54,10 +58,10 @@ const features = [
   },
 ];
 
-function Feature({imageUrl, title, description, rtl}) {
+function Feature({imageUrl, title, description, demo, rtl}) {
   const imgUrl = useBaseUrl(imageUrl);
   const imgDiv = (
-    <div className={classnames('col col--8', styles.feature)}>
+    <div className={classnames('col col--8', styles.featureImage)}>
       {imgUrl && (
         <div>
           <img className={styles.featureImage} src={imgUrl} alt={title} />
@@ -67,14 +71,24 @@ function Feature({imageUrl, title, description, rtl}) {
   )
   const txtDiv = (
     <div className={classnames('col col--4', styles.feature)}>
-      <h3>{title}</h3>
+      <h2>{title}</h2>
       <p>{description}</p>
+      {demo 
+      ? <Popup modal closeOnDocumentClick 
+          trigger={
+            <button class="button button--primary">Demo</button>
+          }
+          style={{width: "100%"}}
+        >
+          <img className={styles.featureImage} src={useBaseUrl(demo)} alt={title} />
+        </Popup>
+      : null}
     </div>
   )
   return (    
     <div className={classnames('row', styles.heroBanner)}> 
       {rtl ? imgDiv : txtDiv}
-      {rtl ? txtDiv : imgDiv}
+      {rtl ? txtDiv : imgDiv}      
     </div>
   );
 }
@@ -86,8 +100,9 @@ function Home() {
     <Layout
       title={`Home`}
       description={siteConfig.tagline}>
-      <header className={classnames('hero hero--primary', styles.heroBanner)}>
-        <div className="container">
+        
+      <header className={classnames('hero hero--primary', styles.heroBanner)} >          
+        <div className="container" style={{ backgroundImage: `url(${useBaseUrl('img/landing/minhhoa1.png')})` }}>
           <div style={{display: "flex"}}>
             <img src={'img/sqlCanvasIcon.png'} alt={"Icon"} height="60"/>
             <h1 className="hero__title">{siteConfig.title}</h1>
@@ -96,13 +111,14 @@ function Home() {
           <div className={styles.buttons}>
             <Link
               className={classnames(
-                'button button--outline button--secondary button--lg',
+                'button button--secondary button--lg',
                 styles.getStarted,
               )}
               to={useBaseUrl('docs/installation')}>
               Try It Now
             </Link>
           </div>
+          
         </div>
       </header>
       <main>

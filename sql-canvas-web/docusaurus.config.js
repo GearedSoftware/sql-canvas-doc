@@ -1,6 +1,6 @@
 module.exports = {
   title: 'SQL Canvas (Beta)',
-  tagline: 'A less-typing, more-dragging SQL Database Browser, where objects and their relationships are displayed on a Canvas rather than a traditional tabular format.',
+  tagline: 'Visualise your data with a unique drag and drop style canvas for viewing Relational Databases. Create insights into your data that simply cant be seen with traditional tabular style result sets.',
   url: 'https://sqlcanvas.com',
   baseUrl: '/',
   favicon: 'img/sqlCanvasBadge.png',
