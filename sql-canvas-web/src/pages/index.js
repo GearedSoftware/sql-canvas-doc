@@ -3,6 +3,7 @@ import Popup from "reactjs-popup";
 import classnames from 'classnames';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
+import Fade from 'react-reveal/Fade';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
@@ -85,10 +86,14 @@ function Feature({imageUrl, title, description, demo, rtl}) {
       : null}
     </div>
   )
-  return (    
-    <div className={classnames('row', styles.heroBanner)}> 
-      {rtl ? imgDiv : txtDiv}
-      {rtl ? txtDiv : imgDiv}      
+  return (
+    <div className={classnames(styles.block)}>
+      <Fade big>
+        <div className={classnames('row', styles.heroBanner)}> 
+          {rtl ? imgDiv : txtDiv}
+          {rtl ? txtDiv : imgDiv}      
+        </div>
+      </Fade>
     </div>
   );
 }
@@ -100,36 +105,31 @@ function Home() {
     <Layout
       title={`Home`}
       description={siteConfig.tagline}>
-        
-      <header className={classnames('hero hero--primary', styles.heroBanner)} >          
-        <div className="container" style={{ backgroundImage: `url(${useBaseUrl('img/landing/minhhoa1.png')})` }}>
-          <div style={{display: "flex"}}>
-            <img src={'img/sqlCanvasIcon.png'} alt={"Icon"} height="60"/>
-            <h1 className="hero__title">{siteConfig.title}</h1>
-          </div>          
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
-          <div className={styles.buttons}>
-            <Link
-              className={classnames(
-                'button button--secondary button--lg',
-                styles.getStarted,
-              )}
-              to={useBaseUrl('docs/installation')}>
-              Try It Now
-            </Link>
-          </div>
-          
+      <header className={styles.heroBanner}>      
+        <div className={styles.bgImage}>        
+          <img src={'img/landing/nen1.png'} alt={"Background"} height="700px"/>
+        </div>           
+        <div className={classnames(styles.bgImage, styles.bgImageLogo)}>        
+          <img src={'img/landing/logobot.svg'} alt={"Logo"} width="320px"/>  
+          <p className={styles.tagline}>{siteConfig.tagline}</p>
+          <Link
+            className={classnames(
+              'button button--primary button--lg',
+              styles.getStarted,
+            )}
+            to={useBaseUrl('docs/installation')}>
+            Try It Now
+          </Link>
         </div>
       </header>
       <main>
         {features && features.length && (
-          <section className={styles.features}>
+          <section className={classnames(styles.features, styles.featureText)}>
             <div className="container">
               <div className="column">
                 {features.map((props, idx) => (
                   <React.Fragment>
                     <Feature key={idx} {...props} rtl={idx % 2 === 1} />
-                    <hr/>
                   </React.Fragment>
                 ))}
               </div>
