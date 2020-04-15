@@ -6,7 +6,7 @@
   padding: 100px 0;
   position: relative;
   overflow: hidden;
-  height: 800px;
+  height: calc(100vh - 60px);
 }
 
 .header {  
@@ -22,7 +22,7 @@
 }
 
 .bgImageLogo {
-  top: 96px;
+  top: 136px;
 }
 
 @media screen and (max-width: 966px) {
