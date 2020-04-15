@@ -78,7 +78,7 @@ function Feature({imageUrl, title, description, demo, rtl}) {
       {demo 
       ? <Popup modal closeOnDocumentClick 
           trigger={
-            <button class="button button--info button--lg">Demo</button>
+            <button class="button button--info button--outline">Demo</button>
           }
           style={{width: "100%"}}
         >
@@ -113,13 +113,8 @@ function Home() {
         <div className={classnames(styles.bgImage, styles.bgImageLogo)}>        
           <img src={'img/landing/logobot.svg'} alt={"Logo"} width="320px"/>  
           <p className={styles.tagline}>{siteConfig.tagline}</p>
-          <Link
-            className={classnames(
-              'button button--primary button--lg',
-              styles.getStarted,
-            )}
-            to={useBaseUrl('docs/installation')}>
-            Try It Now
+          <Link className={classnames('button button--primary button--outline button--lg', styles.getStarted)} to={useBaseUrl('docs/installation')}>
+            Get Started
           </Link>
         </div>
       </header>
