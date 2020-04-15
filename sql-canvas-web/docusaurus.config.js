@@ -10,7 +10,7 @@ module.exports = {
     navbar: {
       logo: {
         alt: 'SQL Canvas Logo',
-        src: 'img/sqlCanvasLogo.png',
+        src: 'img/logobot.svg',
       },
       links: [
         {to: 'docs/dbms', label: 'Docs', position: 'left'},

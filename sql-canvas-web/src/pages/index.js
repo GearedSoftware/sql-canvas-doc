@@ -37,7 +37,8 @@ const features = [
       <>
         Integrate your findings with existing business processes by exporting your data and relationships in various formats including xml, csv, json and xlsx.
       </>
-    )
+    ),
+    demo: "img/demo_integration.gif"
   },
   {
     title: <>Centralised Data</>,
@@ -111,7 +112,7 @@ function Home() {
           <img src={'img/landing/nen1.png'} alt={"Background"} height="700px" width="100%"/>
         </div>           
         <div className={classnames(styles.bgImage, styles.bgImageLogo)}>        
-          <img src={'img/landing/logobot.svg'} alt={"Logo"} width="320px"/>  
+          <img src={'img/logobot.svg'} alt={"Logo"} width="320px"/>  
           <p className={styles.tagline}>{siteConfig.tagline}</p>
           <Link className={classnames('button button--primary button--outline button--lg', styles.getStarted)} to={useBaseUrl('docs/installation')}>
             Get Started
