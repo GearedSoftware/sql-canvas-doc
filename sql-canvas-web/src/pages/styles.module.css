@@ -3,19 +3,21 @@
  * and scoped locally.
  */
 .heroBanner {
-  /* padding: 4rem 0; */
+  padding: 100px 0;
   position: relative;
   overflow: hidden;
-  height: 600px;
+  height: 800px;
 }
 
 .header {  
-  height: 800px !important;
+  height: calc(100vh - 60px)!important;
+  padding: 0 !important;
 }
 
 .bgImage {
   position: absolute;
   text-align: center;
+  height: 100%;
   width: 100%;
 }
 
