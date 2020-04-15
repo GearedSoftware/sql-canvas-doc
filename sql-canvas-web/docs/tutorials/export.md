@@ -4,18 +4,20 @@ title: Export Data
 sidebar_label: Export Data
 ---
 
-There are different ways to **Select** objects in Canvas:
+There are different ways to **Export** objects in Canvas:
 
-1. _**Single Click**_ on an object to select it and clear all other selections.
-2. _**Single Click**_ on an unselected object while holding **Ctrl Key** to add it to the current selections.
-3. Press and move while hold down the left mouse button to select multiple objects as once.
-4. Right-click on an object to open the Context Menu and click on **Select Child**, click on a _Child Object Type_ or _**All Childs**_ to add the childs to the current selections.
-5. Right-click on Canvas to open the Context Menu, click on **Select All** or _**Ctrl+A**_ to select all objects in Canvas.
+1. On **History** view, double-click on a History entry and click on **Export** button in the corner of table view, select a file type to export to.
+2. On an active **Canvas**, right-click on a selected object(s) to open the Context Menu, click on **Export** and select a file type.
+3. Or right-click on Canvas to open the Context Menu, click on **Export** and select a file type.
 
-![Demo Canvas Select](/img/docs/demo_canvas_select.gif)
+![Demo Canvas Select](/img/docs/demo_export.gif)
 
-To de-select:
+## Support Format:
 
-1. Click on the Canvas and not on any object to clear all selections
-2.  _**Single Click**_ while holding **Ctrl** key on a selected object to remove it from the current selections.
+### JSON (.json)
+
+### XML (.xml)
+
+### EXCEL (.xslx)
+
 
