@@ -88,7 +88,7 @@ function Feature({imageUrl, title, description, demo, rtl}) {
   )
   return (
     <div className={classnames(styles.block)}>
-      <Fade big>
+      <Fade>
         <div className={classnames('row', styles.heroBanner)}> 
           {rtl ? imgDiv : txtDiv}
           {rtl ? txtDiv : imgDiv}      
@@ -105,9 +105,9 @@ function Home() {
     <Layout
       title={`Home`}
       description={siteConfig.tagline}>
-      <header className={styles.heroBanner}>      
+      <header className={classnames(styles.heroBanner, styles.header)}>      
         <div className={styles.bgImage}>        
-          <img src={'img/landing/nen1.png'} alt={"Background"} height="700px"/>
+          <img src={'img/landing/nen1.png'} alt={"Background"} height="700px" width="100%"/>
         </div>           
         <div className={classnames(styles.bgImage, styles.bgImageLogo)}>        
           <img src={'img/landing/logobot.svg'} alt={"Logo"} width="320px"/>  
@@ -128,9 +128,9 @@ function Home() {
             <div className="container">
               <div className="column">
                 {features.map((props, idx) => (
-                  <React.Fragment>
+                  <div className="section">
                     <Feature key={idx} {...props} rtl={idx % 2 === 1} />
-                  </React.Fragment>
+                  </div>
                 ))}
               </div>
             </div>

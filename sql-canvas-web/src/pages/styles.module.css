@@ -6,7 +6,11 @@
   /* padding: 4rem 0; */
   position: relative;
   overflow: hidden;
-  height: 800px;
+  height: 600px;
+}
+
+.header {  
+  height: 800px !important;
 }
 
 .bgImage {
@@ -26,12 +30,12 @@
 }
 
 .tagline {
-  width: 35%;
+  width: 45%;
   margin: 30px auto;
   color: #5f6368;
   font-family: Roboto,Arial,Helvetica,sans-serif;
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
   letter-spacing: 0;
   font-weight: 400;   
 }

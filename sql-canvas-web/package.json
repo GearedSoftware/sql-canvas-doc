@@ -15,7 +15,6 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-reveal": "^1.2.2",
-    "react-youtube": "^7.9.0",
     "reactjs-popup": "^1.5.0"
   },
   "browserslist": {
