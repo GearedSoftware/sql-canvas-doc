@@ -52,9 +52,10 @@ const features = [
     title: <>Multiple DBMS Support</>,
     imageUrl: 'img/landing/minhhoa5.png',
     description: (
-      <>
+      <div>
         We support the most common used DBMS including MySQL, Microsoft SQL and Postgresql with an ever-increasing pipeline of development to cover IBM DB2, Oracle, SAP HANA and MongoDb.
-      </>
+        <img src={'img/landing/dbms.png'} alt={"Logo"} width="320px"/>
+      </div>
     )
   },
 ];
@@ -77,7 +78,7 @@ function Feature({imageUrl, title, description, demo, rtl}) {
       {demo 
       ? <Popup modal closeOnDocumentClick 
           trigger={
-            <button class="button button--primary">Demo</button>
+            <button class="button button--info button--lg">Demo</button>
           }
           style={{width: "100%"}}
         >
