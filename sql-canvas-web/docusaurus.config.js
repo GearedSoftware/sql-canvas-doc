@@ -62,7 +62,7 @@ module.exports = {
             },
             {
               label: 'Contact Us',
-              href: 'mailto:long@gearedsoftware.com?Subject=SQLCanvas ',
+              href: 'mailto:long@gearedsoftware.com?Subject=SQLCanvas',
             },
           ],
         },
