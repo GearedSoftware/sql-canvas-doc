@@ -11,37 +11,37 @@ import './modal.css';
 
 const features = [  
   {
-    title: <>Visualise Data</>,
+    title: "Visualise Data",
     imageUrl: 'img/landing/minhhoa1.png',
     description: (
       <>
         Visualise your data objects and relationships with an interactive HTML canvas allowing you to access, discover and investigate your databases.
       </>
     ),
-    demo: "img/docs/demo_select_import.gif"
+    demo: "img/landing/demo_visual.gif"
   },
   {
-    title: <>SQL Builder</>,
+    title: "SQL Builder",
     imageUrl: 'img/landing/minhhoa2.png',
     description: (
       <>
         Quickly build Structured Query Language (SQL) using our SQL Builder covering simple to complex statements to retrieve data, visually browse data objects and discover relationships with ease.
       </>
     ),
-    demo: "img/docs/demo_select_builder.gif"
+    demo: "img/landing/demo_select_builder.gif"
   },
   {
-    title: <>Data Integration</>,
+    title: "Data Integration",
     imageUrl: 'img/landing/minhhoa4.png',
     description: (
       <>
         Integrate your findings with existing business processes by exporting your data and relationships in various formats including xml, csv, json and xlsx.
       </>
     ),
-    demo: "img/demo_integration.gif"
+    demo: "img/docs/demo_export.gif"
   },
   {
-    title: <>Centralised Data</>,
+    title: "Centralised Data",
     imageUrl: 'img/landing/minhhoa3.png',
     description: (
       <>
@@ -50,7 +50,7 @@ const features = [
     )
   },
   {
-    title: <>Multiple DBMS Support</>,
+    title: "Multiple DBMS Support",
     imageUrl: 'img/landing/minhhoa5.png',
     description: (
       <div>
@@ -83,7 +83,7 @@ function Feature({imageUrl, title, description, demo, rtl}) {
           }
           style={{width: "100%"}}
         >
-          <img className={styles.featureImage} src={useBaseUrl(demo)} alt={title} />
+          <img className={styles.demoImage} src={useBaseUrl(demo)} alt={title} />
         </Popup>
       : null}
     </div>
