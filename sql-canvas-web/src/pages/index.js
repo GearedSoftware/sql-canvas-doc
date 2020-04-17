@@ -106,10 +106,10 @@ function Home() {
   return (
     <Layout
       title={`Home`}
-      description={siteConfig.tagline}>
+      description={siteConfig.tagline}>        
       <header className={classnames(styles.heroBanner, styles.header)}>      
         <div className={styles.bgImage}>        
-          <img src={'img/landing/nen1.png'} alt={"Background"} height="100%" width="100%"/>
+          <img src={'img/landing/background.png'} alt={"Background"} height="100%" width="100%"/>
         </div>           
         <div className={classnames(styles.bgImage, styles.bgImageLogo)}>        
           <img src={'img/logobot.svg'} alt={"Logo"} width="320px"/>  
