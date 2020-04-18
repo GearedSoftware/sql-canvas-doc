@@ -74,24 +74,20 @@ const fadeProps = {delay: 650, duration: 1500};
 function Feature({imageUrl, title, description, demo, rtl}) {
   const imgUrl = useBaseUrl(imageUrl);
   const imgDiv = (
-      <div className={classnames('col', styles.featureImage)}>
-        {imgUrl && (
-          <div>
-            <img className={styles.featureImage} src={imgUrl} alt={title} />
-          </div>
-        )}      
-      </div>
+    <div className={classnames('col', styles.featureImage)}>
+      {imgUrl && (<img src={imgUrl} alt={title} />)}      
+    </div>
   )
   const txtDiv = (
-      <div className={classnames('col')}>
-        <h2>{title}</h2>
-        <p>{description}</p>
-        {demo 
-        ? <Popup modal closeOnDocumentClick trigger={<button className="button button--info button--outline">Demo</button>}>
-            <img className={styles.demoImage} src={useBaseUrl(demo)} alt={title} />
-          </Popup>
-        : null}
-      </div>
+    <div className={classnames('col')}>
+      <h2>{title}</h2>
+      <p>{description}</p>
+      {demo 
+      ? <Popup modal closeOnDocumentClick closeOnEscape lockScroll trigger={<button className="button button--info button--outline">Demo</button>}>
+          <img className={styles.demoImage} src={useBaseUrl(demo)} alt={title} />
+        </Popup>
+      : null}
+    </div>
   )
   return (    
     <div className={classnames('section', styles.block)}>  
