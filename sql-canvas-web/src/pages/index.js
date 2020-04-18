@@ -69,8 +69,6 @@ const features = [
   },
 ];
 
-const fadeProps = {delay: 650, duration: 1500};
-
 function Feature({imageUrl, title, description, demo, rtl}) {
   const imgUrl = useBaseUrl(imageUrl);
   const imgDiv = (
@@ -93,10 +91,13 @@ function Feature({imageUrl, title, description, demo, rtl}) {
   )
   return (    
     <div className={classnames('section', styles.block)}>  
-      <div className={classnames('row', styles.heroBanner)}> 
-        {rtl ? <Fade left {...fadeProps}>{imgDiv}{txtDiv}</Fade>
-             : <Fade right {...fadeProps}>{txtDiv}{imgDiv}</Fade>} 
-      </div>
+      <Fade left={rtl ? true : false} right={rtl ? false : true} delay={650} duration={1500}>          
+        <div className={classnames('row', styles.heroBanner)}> 
+          {rtl 
+          ? <React.Fragment>{imgDiv}{txtDiv}</React.Fragment>
+          : <React.Fragment>{txtDiv}{imgDiv}}</React.Fragment>}
+        </div>
+      </Fade>        
     </div>
   );
 }
@@ -125,11 +126,9 @@ function Home() {
         {features && features.length 
         ? <section className={styles.features}>
             <div className="container">
-              <div className="column">
-                {features.map((props, idx) => (
-                  <Feature key={idx} {...props} rtl={mdSize && idx % 2 === 1} />
-                ))}
-              </div>
+              {features.map((props, idx) => (
+                <Feature key={idx} {...props} rtl={mdSize && idx % 2 === 1} />
+              ))}
             </div>
           </section>
         : null}
