@@ -4,7 +4,6 @@ import classnames from 'classnames';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import Fade from 'react-reveal/Fade';
-import window from 'global/window';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
@@ -72,8 +71,7 @@ const features = [
 
 const fadeProps = {delay: 650, duration: 1500};
 
-function Feature({imageUrl, title, description, demo, idx}) {
-  const rtl = window.innerWidth > 900 && idx % 2 === 1;
+function Feature({imageUrl, title, description, demo, rtl}) {
   const imgUrl = useBaseUrl(imageUrl);
   const imgDiv = (
     <div className={classnames('col col--8', styles.featureImage)}>
@@ -108,6 +106,7 @@ function Feature({imageUrl, title, description, demo, idx}) {
 function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
+  const mdSize = global.innerWidth > 900 ? true : false;
   return (
     <Layout
       title={`Home`}
@@ -130,7 +129,7 @@ function Home() {
             <div className="container">
               <div className="column">
                 {features.map((props, idx) => (
-                  <Feature key={idx} {...props} idx={idx} />
+                  <Feature key={idx} {...props} rtl={mdSize && idx % 2 === 1} />
                 ))}
               </div>
             </div>
