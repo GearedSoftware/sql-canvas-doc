@@ -74,23 +74,27 @@ const fadeProps = {delay: 650, duration: 1500};
 function Feature({imageUrl, title, description, demo, rtl}) {
   const imgUrl = useBaseUrl(imageUrl);
   const imgDiv = (
-    <div key={`${title}_left`} className={classnames('col col--8', styles.featureImage)}>
-      {imgUrl && (
-        <div>
-          <img className={styles.featureImage} src={imgUrl} alt={title} />
-        </div>
-      )}      
+    <div className="col col--8">
+      <div className={classnames(styles.feature)}>
+        {imgUrl && (
+          <div>
+            <img className={styles.featureImage} src={imgUrl} alt={title} />
+          </div>
+        )}      
+      </div>
     </div>
   )
   const txtDiv = (
-    <div key={`${title}_right`} className={classnames('col col--4', styles.feature)}>
-      <h2>{title}</h2>
-      <p>{description}</p>
-      {demo 
-      ? <Popup modal closeOnDocumentClick trigger={<button className="button button--info button--outline">Demo</button>}>
-          <img className={styles.demoImage} src={useBaseUrl(demo)} alt={title} />
-        </Popup>
-      : null}
+    <div className="col col--4">
+      <div className={classnames(styles.feature)}>
+        <h2>{title}</h2>
+        <p>{description}</p>
+        {demo 
+        ? <Popup modal closeOnDocumentClick trigger={<button className="button button--info button--outline">Demo</button>}>
+            <img className={styles.demoImage} src={useBaseUrl(demo)} alt={title} />
+          </Popup>
+        : null}
+      </div>
     </div>
   )
   return (    
@@ -128,44 +132,9 @@ function Home() {
           <section className={styles.features}>
             <div className="container">
               <div className="column">
-                {/* Feature 0 */}
-                <div className={classnames('section', styles.block)}>  
-                  <div className={classnames('row', styles.heroBanner)}> 
-                    {/* Left */}
-                    <div className={classnames('col col--4', styles.feature)}>
-                      <h2>{features[0].title}</h2>
-                      <p>{features[0].description}</p>
-                      <Popup modal closeOnDocumentClick trigger={<button className="button button--info button--outline">Demo</button>}>
-                        <img className={styles.demoImage} src={useBaseUrl(features[0].demo)} alt={features[0].title} />
-                      </Popup>
-                    </div>
-                    {/* Right */}
-                    <div className={classnames('col col--8', styles.featureImage)}>    
-                      <div>
-                        <img className={styles.featureImage} src={features[0].imageUrl} alt={features[0].title} />
-                      </div>
-                    </div>                  
-                  </div>
-                </div>
-                {/* Feature 1 */}
-                <div className={classnames('section', styles.block)}>  
-                  <div className={classnames('row', styles.heroBanner)}> 
-                    {/* Left */}
-                    <div className={classnames('col col--8', styles.featureImage)}>    
-                      <div>
-                        <img className={styles.featureImage} src={features[1].imageUrl} alt={features[1].title} />
-                      </div>
-                    </div>    
-                    {/* Right */}
-                    <div className={classnames('col col--4', styles.feature)}>
-                      <h2>{features[1].title}</h2>
-                      <p>{features[1].description}</p>
-                      <Popup modal closeOnDocumentClick trigger={<button className="button button--info button--outline">Demo</button>}>
-                        <img className={styles.demoImage} src={useBaseUrl(features[1].demo)} alt={features[1].title} />
-                      </Popup>
-                    </div>              
-                  </div>
-                </div>
+                {features.map((props, idx) => (
+                  <Feature key={idx} {...props} rtl={mdSize && idx % 2 === 1} />
+                ))}
               </div>
             </div>
           </section>
