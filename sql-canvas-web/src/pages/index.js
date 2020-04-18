@@ -94,8 +94,14 @@ function Feature({imageUrl, title, description, demo, rtl}) {
       <Fade left={rtl ? true : false} right={rtl ? false : true} delay={650} duration={1500}>          
         <div className={classnames('row', styles.heroBanner)}> 
           {rtl 
-          ? <React.Fragment>{imgDiv}{txtDiv}</React.Fragment>
-          : <React.Fragment>{txtDiv}{imgDiv}}</React.Fragment>}
+          ? <React.Fragment>
+              {imgDiv}
+              {txtDiv}
+            </React.Fragment>
+          : <React.Fragment>
+              {txtDiv}
+              {imgDiv}
+            </React.Fragment>}
         </div>
       </Fade>        
     </div>
