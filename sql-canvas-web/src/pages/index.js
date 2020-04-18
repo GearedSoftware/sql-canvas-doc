@@ -69,15 +69,20 @@ const features = [
   },
 ];
 
-function Feature({imageUrl, title, description, demo, rtl}) {
+const fadeProps = {delay: 650, duration: 1500};
+
+function Feature({imageUrl, title, description, demo, rtl}) {  
+  const mdSize = global.innerWidth > 900 ? true : false;
   const imgUrl = useBaseUrl(imageUrl);
   const imgDiv = (
-    <div >
-      {imgUrl ? <img class={styles.featureImage} src={imgUrl} alt={title} /> : null} 
+    <div className="col col--8" style={{textAlign: "center", zIndex: -1}}>
+      <div >
+        {imgUrl ? <img class={styles.featureImage} src={imgUrl} alt={title} /> : null} 
+      </div>
     </div>
   )
   const txtDiv = (
-    <React.Fragment>
+    <div className="col col--4">
       <h2>{title}</h2>
       <p>{description}</p>
       {demo 
@@ -85,31 +90,15 @@ function Feature({imageUrl, title, description, demo, rtl}) {
           <img className={styles.demoImage} src={useBaseUrl(demo)} alt={title} />
         </Popup>
       : null}
-    </React.Fragment>
+    </div>
   )
   return (    
     <div className={classnames('section', styles.block)}>  
-      <Fade left={rtl ? true : false} right={rtl ? false : true} delay={650} duration={1500}>          
-        <div className={classnames('row', styles.heroBanner)}> 
-          {rtl 
-          ? <React.Fragment>
-              <div className="col col--8" style={{textAlign: "center", zIndex: -1}}>
-                {imgDiv}
-              </div>
-              <div className="col col--4">
-                {txtDiv}
-              </div>              
-            </React.Fragment>
-          : <React.Fragment>
-              <div className="col col--4">
-                {txtDiv}
-              </div>
-              <div className="col col--8" style={{textAlign: "center", zIndex: -1}}>
-                {imgDiv}
-              </div>
-            </React.Fragment>}
-        </div>
-      </Fade>        
+      <div className={classnames('row', styles.heroBanner)}> 
+        {mdSize && rtl 
+        ? <Fade left {...fadeProps}>{imgDiv}{txtDiv}</Fade>
+        : <Fade right {...fadeProps}>{txtDiv}{imgDiv}</Fade>} 
+      </div>
     </div>
   );
 }
@@ -117,7 +106,6 @@ function Feature({imageUrl, title, description, demo, rtl}) {
 function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
-  const mdSize = global.innerWidth > 900 ? true : false;
   return (
     <Layout
       title={`Home`}
@@ -138,9 +126,11 @@ function Home() {
         {features && features.length 
         ? <section className={styles.features}>
             <div className="container">
-              {features.map((props, idx) => (
-                <Feature key={idx} {...props} rtl={mdSize && idx % 2 === 1} />
-              ))}
+              <div className="column">
+                {features.map((props, idx) => (
+                  <Feature key={idx} {...props} rtl={idx % 2 === 1} />
+                ))}
+              </div>
             </div>
           </section>
         : null}
