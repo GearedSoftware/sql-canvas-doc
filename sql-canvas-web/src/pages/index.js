@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import Fade from 'react-reveal/Fade';
+import window from 'global';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
@@ -88,7 +89,7 @@ function Feature({imageUrl, title, description, demo, rtl}) {
       {demo 
       ? <Popup modal closeOnDocumentClick 
           trigger={
-            <button class="button button--info button--outline">Demo</button>
+            <button className="button button--info button--outline">Demo</button>
           }
           style={{width: "100%"}}
         >
@@ -132,7 +133,7 @@ function Home() {
               <div className="container">
                 <div className="column">
                   {features.map((props, idx) => (
-                    <Feature key={idx} {...props} rtl={idx % 2 === 1 && window.innerWidth > 800} />
+                    <Feature key={idx} {...props} rtl={window.innerWidth > 900 && idx % 2 === 1} />
                   ))}
                 </div>
               </div>
