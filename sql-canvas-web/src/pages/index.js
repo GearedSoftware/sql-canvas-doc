@@ -68,10 +68,12 @@ const features = [
       </>
     )
   },
-];function Feature({imageUrl, title, description, rtl}) {
+];
+
+function Feature({imageUrl, title, description, demo, rtl}) {
   const imgUrl = useBaseUrl(imageUrl);
   const imgDiv = (
-    <div className={classnames('col col--8', styles.feature)}>
+    <div className={classnames('col col--8', styles.featureImage)}>
       {imgUrl && (
         <div>
           <img className={styles.featureImage} src={imgUrl} alt={title} />
@@ -81,8 +83,13 @@ const features = [
   )
   const txtDiv = (
     <div className={classnames('col col--4', styles.feature)}>
-      <h3>{title}</h3>
+      <h2>{title}</h2>
       <p>{description}</p>
+      {demo 
+      ? <Popup modal closeOnDocumentClick trigger={<button className="button button--info button--outline">Demo</button>}>
+          <img className={styles.demoImage} src={useBaseUrl(demo)} alt={title} />
+        </Popup>
+      : null}
     </div>
   )
   return (    
