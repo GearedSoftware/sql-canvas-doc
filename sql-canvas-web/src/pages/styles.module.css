@@ -3,7 +3,6 @@
  * and scoped locally.
  */
 .heroBanner {
-  display: flex;
   padding: 180px 0;
   position: relative;
   overflow: hidden;
@@ -68,8 +67,6 @@
 
 .featureImage {
   max-height: 400px;
-  text-align: center;
-  z-index: -1;
 }
 
 .featureText {  
