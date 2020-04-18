@@ -72,10 +72,8 @@ const features = [
 function Feature({imageUrl, title, description, demo, rtl}) {
   const imgUrl = useBaseUrl(imageUrl);
   const imgDiv = (
-    <div className="col col--8" style={{textAlign: "center", zIndex: -1}}>
-      <div >
-        {imgUrl ? <img class={styles.featureImage} src={imgUrl} alt={title} /> : null} 
-      </div>
+    <div >
+      {imgUrl ? <img class={styles.featureImage} src={imgUrl} alt={title} /> : null} 
     </div>
   )
   const txtDiv = (
@@ -95,17 +93,20 @@ function Feature({imageUrl, title, description, demo, rtl}) {
         <div className={classnames('row', styles.heroBanner)}> 
           {rtl 
           ? <React.Fragment>
-              {imgDiv}
+              <div className="col col--8" style={{textAlign: "center", zIndex: -1}}>
+                {imgDiv}
+              </div>
               <div className="col col--4">
                 {txtDiv}
-              </div>
-              
+              </div>              
             </React.Fragment>
           : <React.Fragment>
               <div className="col col--4">
                 {txtDiv}
               </div>
-              {imgDiv}
+              <div className="col col--8" style={{textAlign: "center", zIndex: -1}}>
+                {imgDiv}
+              </div>
             </React.Fragment>}
         </div>
       </Fade>        
