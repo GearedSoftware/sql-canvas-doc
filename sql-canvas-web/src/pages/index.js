@@ -99,13 +99,13 @@ function Feature({imageUrl, title, description, demo, rtl}) {
     </div>
   )
   return (
-    <div className={classnames("section", styles.block)}>      
-      <div className="column">
+    <div className={classnames("section", styles.block)}>
+      <div className="column">  
         <div className={classnames('row', styles.heroBanner)}> 
           {rtl ? <Fade left {...fadeProps}>{imgDiv}{txtDiv}</Fade>
-              : <Fade right {...fadeProps}>{txtDiv}{imgDiv}</Fade>}
-        </div>      
-      </div>
+              : <Fade right {...fadeProps}>{txtDiv}{imgDiv}</Fade>} 
+        </div>
+      </div>    
     </div>
   );
 }
@@ -132,10 +132,10 @@ function Home() {
       <main>
           {features && features.length && (
             <section className={classnames(styles.features, styles.featureText)}>
-              <div className="container">
+              <div className="container">    
                   {features.map((props, idx) => (
                     <Feature key={idx} {...props} rtl={window.innerWidth > 900 && idx % 2 === 1} />
-                  ))}
+                  ))} 
               </div>
             </section>
           )}     

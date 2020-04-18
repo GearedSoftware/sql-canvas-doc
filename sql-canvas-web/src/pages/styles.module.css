@@ -3,7 +3,7 @@
  * and scoped locally.
  */
 .heroBanner {
-  padding: 100px 0;
+  padding: 180px 0;
   position: relative;
   overflow: hidden;
   height: calc(100vh - 60px);
