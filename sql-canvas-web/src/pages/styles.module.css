@@ -24,7 +24,7 @@
 
 .bgImageLogo {
   top: calc(15vh);
-  z-index: 2;
+  z-index: 0;
 }
 
 @media screen and (max-width: 966px) {
@@ -68,6 +68,7 @@
 .featureImage {
   max-height: 400px;
   text-align: center;
+  z-index: -1;
 }
 
 .featureText {  
@@ -80,6 +81,6 @@
 }
 
 .demoImage {
-  height: 750px;
+  max-height: 750px;
   text-align: center;
 }

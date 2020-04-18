@@ -87,12 +87,7 @@ function Feature({imageUrl, title, description, demo, rtl}) {
       <h2>{title}</h2>
       <p>{description}</p>
       {demo 
-      ? <Popup modal closeOnDocumentClick 
-          trigger={
-            <button className="button button--info button--outline">Demo</button>
-          }
-          style={{width: "100%"}}
-        >
+      ? <Popup modal closeOnDocumentClick trigger={<button className="button button--info button--outline">Demo</button>}>
           <img className={styles.demoImage} src={useBaseUrl(demo)} alt={title} />
         </Popup>
       : null}
@@ -102,8 +97,8 @@ function Feature({imageUrl, title, description, demo, rtl}) {
     <div className={classnames("section", styles.block)}>
       <div className="column">  
         <div className={classnames('row', styles.heroBanner)}> 
-          {rtl ? <>{imgDiv}{txtDiv}</>
-              : <>{txtDiv}{imgDiv}</>} 
+          {rtl ? <Fade left {...fadeProps}>{imgDiv}{txtDiv}</Fade>
+              : <Fade right {...fadeProps}>{txtDiv}{imgDiv}</Fade>} 
         </div>
       </div>    
     </div>

@@ -1,4 +1,5 @@
 
 .popup-content {
   width: auto !important;
+  max-width: calc(100vw - 20px);
 }
