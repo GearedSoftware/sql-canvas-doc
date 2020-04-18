@@ -6,8 +6,6 @@ import Link from '@docusaurus/Link';
 import Fade from 'react-reveal/Fade';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import GridContainer from '../Grid/GridContainer';
-import GridItem from '../Grid/GridItem';
 import styles from './styles.module.css';
 import './modal.css';
 
@@ -71,46 +69,35 @@ const features = [
   },
 ];
 
+const fadeProps = {delay: 650, duration: 1500};
 
 function Feature({imageUrl, title, description, demo, rtl}) {  
-  const mdSize = global.innerWidth > 900 ? true : false;
-  const fadeProps = {
-    left: rtl ? true : false, 
-    right: rtl ? false :true, 
-    delay: 650, 
-    duration: 1500
-  };
+  const mdSize = true; //global.innerWidth > 900 ? true : false;
   const imgUrl = useBaseUrl(imageUrl);
   const txtDiv = (
-    <GridItem xs={12} sm={4}>
-      <Fade {...fadeProps}>
-        <div>
-          <h2>{title}</h2>
-          <p>{description}</p>
-          {demo 
-          ? <Popup modal closeOnDocumentClick closeOnEscape lockScroll trigger={<button className="button button--info button--outline">Demo</button>}>
-              <img className={styles.demoImage} src={useBaseUrl(demo)} alt={title} />
-            </Popup>
-          : null}
-        </div>
-      </Fade>
-    </GridItem>
+    <div className="col col--4">
+      <h2>{title}</h2>
+      <p>{description}</p>
+      {demo 
+      ? <Popup modal closeOnDocumentClick closeOnEscape lockScroll trigger={<button className="button button--info button--outline">Demo</button>}>
+          <img className={styles.demoImage} src={useBaseUrl(demo)} alt={title} />
+        </Popup>
+      : null}
+    </div>
   )
   const imgDiv = (
-    <GridItem xs={12} sm={8} style={{textAlign: "center", zIndex: -1}}>
-      <Fade {...fadeProps}>
+    <div className="col col--8" style={{textAlign: "center", zIndex: -1}}>
+      <div >
         {imgUrl ? <img class={styles.featureImage} src={imgUrl} alt={title} /> : null} 
-      </Fade>
-    </GridItem>
+      </div>
+    </div>
   )
   return (    
     <div className={classnames('section', styles.block)}>  
-      <div className={styles.heroBanner}> 
-        <GridContainer>
-          {mdSize && rtl 
-          ? <React.Fragment>{imgDiv}{txtDiv}</React.Fragment>
-          : <React.Fragment>{txtDiv}{imgDiv}</React.Fragment>}
-        </GridContainer>
+      <div className={classnames('row', styles.heroBanner)}> 
+        {mdSize && rtl 
+        ? <Fade left {...fadeProps}>{imgDiv}{txtDiv}</Fade>
+        : <Fade right {...fadeProps}>{txtDiv}{imgDiv}</Fade>} 
       </div>
     </div>
   );
