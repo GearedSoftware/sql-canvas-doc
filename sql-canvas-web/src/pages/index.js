@@ -72,7 +72,7 @@ const features = [
 const fadeProps = {delay: 650, duration: 1500};
 
 function Feature({imageUrl, title, description, demo, rtl}) {  
-  const mdSize = global.innerWidth > 900 ? true : false;
+  const mdSize = true; //global.innerWidth > 900 ? true : false;
   const imgUrl = useBaseUrl(imageUrl);
   const imgDiv = (
     <div className="col col--8" style={{textAlign: "center", zIndex: -1}}>
