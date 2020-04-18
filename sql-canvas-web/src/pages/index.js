@@ -127,7 +127,7 @@ function Home() {
         ? <section className={styles.features}>
             <div className="container">
               {features.map((props, idx) => (
-                <Feature key={idx} {...props} rtl={idx % 2 === 1} />
+                <Feature key={idx} {...props} rtl={false} />
               ))}
             </div>
           </section>
