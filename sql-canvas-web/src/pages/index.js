@@ -74,18 +74,15 @@ const fadeProps = {delay: 650, duration: 1500};
 function Feature({imageUrl, title, description, demo, rtl}) {
   const imgUrl = useBaseUrl(imageUrl);
   const imgDiv = (
-    <div>
-      <div className={classnames('col col--8', styles.featureImage)}>
+      <div className={classnames('col col--8')}>
         {imgUrl && (
-          <div>
+          <div className={classnames(styles.featureImage)}>
             <img className={styles.featureImage} src={imgUrl} alt={title} />
           </div>
         )}      
       </div>
-    </div>
   )
   const txtDiv = (
-    <div>
       <div className={classnames('col col--4')}>
         <h2>{title}</h2>
         <p>{description}</p>
@@ -95,7 +92,6 @@ function Feature({imageUrl, title, description, demo, rtl}) {
           </Popup>
         : null}
       </div>
-    </div>
   )
   return (    
     <div className={classnames('section', styles.block)}>  
