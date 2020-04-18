@@ -129,7 +129,7 @@ function Home() {
             <div className="container">
               <div className="column">
                 {features.map((props, idx) => (
-                  <Feature key={idx} {...props} rtl={idx % 2 === 1} />
+                  <Feature key={idx} {...props} rtl={window.innerWidth > 900 && idx % 2 === 1} />
                 ))}
               </div>
             </div>
