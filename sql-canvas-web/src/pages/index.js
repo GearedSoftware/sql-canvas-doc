@@ -100,23 +100,16 @@ function Home() {
     <Layout
       title={`Home`}
       description={siteConfig.tagline}>
-      <header className={classnames('hero hero--primary', styles.heroBanner)}>
-        <div className="container">
-          <div style={{display: "flex"}}>
-            <img src={'img/sqlCanvasIcon.png'} alt={"Icon"} height="60"/>
-            <h1 className="hero__title">{siteConfig.title}</h1>
-          </div>          
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
-          <div className={styles.buttons}>
-            <Link
-              className={classnames(
-                'button button--outline button--secondary button--lg',
-                styles.getStarted,
-              )}
-              to={useBaseUrl('docs/installation')}>
-              Try It Now
-            </Link>
-          </div>
+      <header className={classnames(styles.heroBanner, styles.header)}>      
+        <div className={styles.bgImage}>        
+          <img src={'img/landing/background.png'} alt={"Background"} height="100%" width="100%"/>
+        </div>           
+        <div className={classnames(styles.bgImage, styles.bgImageLogo)}>        
+          <img src={'img/logobot.svg'} alt={"Logo"} width="320px"/>  
+          <p className={styles.tagline}>{siteConfig.tagline}</p>
+          <Link className={classnames('button button--primary button--outline button--lg', styles.getStarted)} to={useBaseUrl('docs/installation')}>
+            Get Started
+          </Link>
         </div>
       </header>
       <main>
