@@ -70,6 +70,8 @@ const features = [
   },
 ];
 
+const fadeProps = {delay: 650, duration: 1500};
+
 function Feature({imageUrl, title, description, demo, rtl}) {
   const imgUrl = useBaseUrl(imageUrl);
   const imgDiv = (
@@ -93,9 +95,11 @@ function Feature({imageUrl, title, description, demo, rtl}) {
     </div>
   )
   return (    
-    <div className={classnames('row', styles.heroBanner)}> 
-      {rtl ? imgDiv : txtDiv}
-      {rtl ? txtDiv : imgDiv}
+    <div className={classnames('section', styles.block)}>  
+      <div className={classnames('row', styles.heroBanner)}> 
+        {rtl ? imgDiv : txtDiv}
+        {rtl ? txtDiv : imgDiv}
+      </div>
     </div>
   );
 }
