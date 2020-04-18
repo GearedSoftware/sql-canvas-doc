@@ -72,9 +72,6 @@ const features = [
 const fadeProps = {delay: 650, duration: 1500};
 
 function Feature({imageUrl, title, description, demo, rtl}) {  
-  const w = global.innerWidth;
-  console.log(w);
-  const mdSize = w > 900;
   const imgUrl = useBaseUrl(imageUrl);
   const txtDiv = (
     <div className="col col--4">
@@ -97,7 +94,7 @@ function Feature({imageUrl, title, description, demo, rtl}) {
   return (    
     <div className={classnames('section', styles.block)}>  
       <div className={classnames('row', styles.heroBanner)}> 
-        {mdSize && rtl 
+        {rtl 
         ? <Fade left {...fadeProps}>{imgDiv}{txtDiv}</Fade>
         : <Fade right {...fadeProps}>{txtDiv}{imgDiv}</Fade>} 
       </div>
@@ -108,6 +105,7 @@ function Feature({imageUrl, title, description, demo, rtl}) {
 function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
+  // const w = global.innerWidth;
   return (
     <Layout
       title={`Home`}
