@@ -107,7 +107,7 @@ function Feature({imageUrl, title, description, demo, rtl}) {
 function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
-  const mdSize = window.innerWidth > 900 ? true : false;
+  const mdSize = true;
   return (
     <Layout
       title={`Home`}
