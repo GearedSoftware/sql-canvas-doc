@@ -79,7 +79,7 @@ function Feature({imageUrl, title, description, demo, rtl}) {
     </div>
   )
   const txtDiv = (
-    <div className="col col--4">
+    <React.Fragment>
       <h2>{title}</h2>
       <p>{description}</p>
       {demo 
@@ -87,7 +87,7 @@ function Feature({imageUrl, title, description, demo, rtl}) {
           <img className={styles.demoImage} src={useBaseUrl(demo)} alt={title} />
         </Popup>
       : null}
-    </div>
+    </React.Fragment>
   )
   return (    
     <div className={classnames('section', styles.block)}>  
@@ -96,10 +96,15 @@ function Feature({imageUrl, title, description, demo, rtl}) {
           {rtl 
           ? <React.Fragment>
               {imgDiv}
-              {txtDiv}
+              <div className="col col--4">
+                {txtDiv}
+              </div>
+              
             </React.Fragment>
           : <React.Fragment>
-              {txtDiv}
+              <div className="col col--4">
+                {txtDiv}
+              </div>
               {imgDiv}
             </React.Fragment>}
         </div>
