@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import Fade from 'react-reveal/Fade';
-import window from 'global';
+import window from 'global/window';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
@@ -107,7 +107,7 @@ function Feature({imageUrl, title, description, demo, rtl}) {
 function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
-  const mdSize = true;
+  const mdSize = window.innerWidth > 900 ? true : false;
   return (
     <Layout
       title={`Home`}
