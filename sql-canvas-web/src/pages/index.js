@@ -68,13 +68,10 @@ const features = [
       </>
     )
   },
-];
-const fadeProps = {delay: 650, duration: 1500};
-
-function Feature({imageUrl, title, description, demo, rtl}) {
+];function Feature({imageUrl, title, description, rtl}) {
   const imgUrl = useBaseUrl(imageUrl);
   const imgDiv = (
-    <div className={classnames('col col--8', styles.featureImage)}>
+    <div className={classnames('col col--8', styles.feature)}>
       {imgUrl && (
         <div>
           <img className={styles.featureImage} src={imgUrl} alt={title} />
@@ -84,21 +81,14 @@ function Feature({imageUrl, title, description, demo, rtl}) {
   )
   const txtDiv = (
     <div className={classnames('col col--4', styles.feature)}>
-      <h2>{title}</h2>
+      <h3>{title}</h3>
       <p>{description}</p>
-      {demo 
-      ? <Popup modal closeOnDocumentClick trigger={<button className="button button--info button--outline">Demo</button>}>
-          <img className={styles.demoImage} src={useBaseUrl(demo)} alt={title} />
-        </Popup>
-      : null}
     </div>
   )
-  return (
-    <div className={classnames('section', styles.block)}>   
-      <div className={classnames('row', styles.heroBanner)}>   
-        {rtl ? <Fade left {...fadeProps}>{imgDiv}{txtDiv}</Fade>
-            : <Fade right {...fadeProps}>{txtDiv}{imgDiv}</Fade>}     
-      </div>
+  return (    
+    <div className={classnames('row', styles.heroBanner)}> 
+      {rtl ? imgDiv : txtDiv}
+      {rtl ? txtDiv : imgDiv}
     </div>
   );
 }
@@ -109,31 +99,41 @@ function Home() {
   return (
     <Layout
       title={`Home`}
-      description={siteConfig.tagline}>        
-      <header className={classnames(styles.heroBanner, styles.header)}>      
-        <div className={styles.bgImage}>        
-          <img src={'img/landing/background.png'} alt={"Background"} height="100%" width="100%"/>
-        </div>           
-        <div className={classnames(styles.bgImage, styles.bgImageLogo)}>        
-          <img src={'img/logobot.svg'} alt={"Logo"} width="320px"/>  
-          <p className={styles.tagline}>{siteConfig.tagline}</p>
-          <Link className={classnames('button button--primary button--outline button--lg', styles.getStarted)} to={useBaseUrl('docs/installation')}>
-            Get Started
-          </Link>
+      description={siteConfig.tagline}>
+      <header className={classnames('hero hero--primary', styles.heroBanner)}>
+        <div className="container">
+          <div style={{display: "flex"}}>
+            <img src={'img/sqlCanvasIcon.png'} alt={"Icon"} height="60"/>
+            <h1 className="hero__title">{siteConfig.title}</h1>
+          </div>          
+          <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <div className={styles.buttons}>
+            <Link
+              className={classnames(
+                'button button--outline button--secondary button--lg',
+                styles.getStarted,
+              )}
+              to={useBaseUrl('docs/installation')}>
+              Try It Now
+            </Link>
+          </div>
         </div>
       </header>
       <main>
-          {features && features.length && (
-            <section className={classnames(styles.features, styles.featureText)}>
-              <div className="container">
-                <div className="column">
-                  {features.map((props, idx) => (
-                    <Feature key={idx} {...props} rtl={window.innerWidth > 900 && idx % 2 === 1} />
-                  ))} 
-                </div>
+        {features && features.length && (
+          <section className={styles.features}>
+            <div className="container">
+              <div className="column">
+                {features.map((props, idx) => (
+                  <React.Fragment>
+                    <Feature key={idx} {...props} rtl={idx % 2 === 1} />
+                    <hr/>
+                  </React.Fragment>
+                ))}
               </div>
-            </section>
-          )}     
+            </div>
+          </section>
+        )}
       </main>
     </Layout>
   );
