@@ -73,7 +73,8 @@ const fadeProps = {delay: 650, duration: 1500};
 
 function Feature({imageUrl, title, description, demo, rtl}) {  
   const w = global.innerWidth;
-  const mdSize = w > 900 ? true : false;
+  console.log(w);
+  const mdSize = w > 900;
   const imgUrl = useBaseUrl(imageUrl);
   const txtDiv = (
     <div className="col col--4">
