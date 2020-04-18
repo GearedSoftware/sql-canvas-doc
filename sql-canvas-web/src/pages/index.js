@@ -128,9 +128,44 @@ function Home() {
           <section className={styles.features}>
             <div className="container">
               <div className="column">
-                {features.map((props, idx) => (
-                  <Feature key={idx} {...props} rtl={mdSize && idx % 2 === 1} />
-                ))}
+                {/* Feature 0 */}
+                <div className={classnames('section', styles.block)}>  
+                  <div className={classnames('row', styles.heroBanner)}> 
+                    {/* Left */}
+                    <div className={classnames('col col--4', styles.feature)}>
+                      <h2>{features[0].title}</h2>
+                      <p>{features[0].description}</p>
+                      <Popup modal closeOnDocumentClick trigger={<button className="button button--info button--outline">Demo</button>}>
+                        <img className={styles.demoImage} src={useBaseUrl(features[0].demo)} alt={features[0].title} />
+                      </Popup>
+                    </div>
+                    {/* Right */}
+                    <div className={classnames('col col--8', styles.featureImage)}>    
+                      <div>
+                        <img className={styles.featureImage} src={features[0].imageUrl} alt={features[0].title} />
+                      </div>
+                    </div>                  
+                  </div>
+                </div>
+                {/* Feature 1 */}
+                <div className={classnames('section', styles.block)}>  
+                  <div className={classnames('row', styles.heroBanner)}> 
+                    {/* Left */}
+                    <div className={classnames('col col--8', styles.featureImage)}>    
+                      <div>
+                        <img className={styles.featureImage} src={features[1].imageUrl} alt={features[1].title} />
+                      </div>
+                    </div>    
+                    {/* Right */}
+                    <div className={classnames('col col--4', styles.feature)}>
+                      <h2>{features[1].title}</h2>
+                      <p>{features[1].description}</p>
+                      <Popup modal closeOnDocumentClick trigger={<button className="button button--info button--outline">Demo</button>}>
+                        <img className={styles.demoImage} src={useBaseUrl(features[1].demo)} alt={features[1].title} />
+                      </Popup>
+                    </div>              
+                  </div>
+                </div>
               </div>
             </div>
           </section>
