@@ -72,7 +72,8 @@ const features = [
 
 const fadeProps = {delay: 650, duration: 1500};
 
-function Feature({imageUrl, title, description, demo, rtl}) {
+function Feature({imageUrl, title, description, demo, idx}) {
+  const rtl = window.innerWidth > 900 && idx % 2 === 1;
   const imgUrl = useBaseUrl(imageUrl);
   const imgDiv = (
     <div className={classnames('col col--8', styles.featureImage)}>
@@ -107,7 +108,6 @@ function Feature({imageUrl, title, description, demo, rtl}) {
 function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
-  const mdSize = window.innerWidth > 900 ? true : false;
   return (
     <Layout
       title={`Home`}
@@ -130,7 +130,7 @@ function Home() {
             <div className="container">
               <div className="column">
                 {features.map((props, idx) => (
-                  <Feature key={idx} {...props} rtl={mdSize && idx % 2 === 1} />
+                  <Feature key={idx} {...props} idx={idx} />
                 ))}
               </div>
             </div>
