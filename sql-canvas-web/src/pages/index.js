@@ -96,8 +96,8 @@ function Feature({imageUrl, title, description, demo, rtl}) {
   return (    
     <div className={classnames('section', styles.block)}>  
       <div className={classnames('row', styles.heroBanner)}> 
-      {rtl ? <Fade left {...fadeProps}>{imgDiv}{txtDiv}</Fade>
-            : <Fade right {...fadeProps}>{txtDiv}{imgDiv}</Fade>} 
+        {rtl ? <Fade left {...fadeProps}>{imgDiv}{txtDiv}</Fade>
+             : <Fade right {...fadeProps}>{txtDiv}{imgDiv}</Fade>} 
       </div>
     </div>
   );
@@ -106,7 +106,7 @@ function Feature({imageUrl, title, description, demo, rtl}) {
 function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
-  const mdSize = global.innerWidth > 900 ? true : false;
+  const mdSize = true; //global.innerWidth > 900 ? true : false;
   return (
     <Layout
       title={`Home`}
