@@ -51,15 +51,24 @@ const features = [
   },
   {
     title: "Multiple DBMS Support",
+    imageUrl: 'img/landing/dbms.png',
+    description: (
+      <>
+        We support the most common used DBMS including MySQL, Microsoft SQL and Postgresql with an ever-increasing pipeline of development to cover IBM DB2, Oracle, SAP HANA and MongoDb.
+      </>
+    )
+  },
+  {
+    title: "Custom Build",
     imageUrl: 'img/landing/minhhoa5.png',
     description: (
-      <div>
-        We support the most common used DBMS including MySQL, Microsoft SQL and Postgresql with an ever-increasing pipeline of development to cover IBM DB2, Oracle, SAP HANA and MongoDb.
-        <img src={'img/landing/dbms.png'} alt={"Logo"} width="320px"/>
-      </div>
+      <>
+        We can provide specialised build to fit your organisation need, from import/export, object visualisations to protected cloud, data integration, and more. Please contact us.
+      </>
     )
   },
 ];
+const fadeProps = {delay: 650, duration: 1500};
 
 function Feature({imageUrl, title, description, demo, rtl}) {
   const imgUrl = useBaseUrl(imageUrl);
@@ -89,13 +98,11 @@ function Feature({imageUrl, title, description, demo, rtl}) {
     </div>
   )
   return (
-    <div className={classnames(styles.block)}>
-      <Fade>
-        <div className={classnames('row', styles.heroBanner)}> 
-          {rtl ? imgDiv : txtDiv}
-          {rtl ? txtDiv : imgDiv}      
-        </div>
-      </Fade>
+    <div className={classnames("section", styles.block)}>
+      <div className={classnames('row', styles.heroBanner)}> 
+        {rtl ? <Fade left {...fadeProps}>{imgDiv}{txtDiv}</Fade>
+             : <Fade right {...fadeProps}>{txtDiv}{imgDiv}</Fade>}
+      </div>
     </div>
   );
 }
@@ -120,19 +127,17 @@ function Home() {
         </div>
       </header>
       <main>
-        {features && features.length && (
-          <section className={classnames(styles.features, styles.featureText)}>
-            <div className="container">
-              <div className="column">
-                {features.map((props, idx) => (
-                  <div className="section">
+          {features && features.length && (
+            <section className={classnames(styles.features, styles.featureText)}>
+              <div className="container">
+                <div className="column">
+                  {features.map((props, idx) => (
                     <Feature key={idx} {...props} rtl={idx % 2 === 1} />
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          </section>
-        )}
+            </section>
+          )}     
       </main>
     </Layout>
   );
