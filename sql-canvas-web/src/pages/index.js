@@ -126,11 +126,9 @@ function Home() {
         {features && features.length 
         ? <section className={styles.features}>
             <div className="container">
-              <div className="column">
-                {features.map((props, idx) => (
-                  <Feature key={idx} {...props} rtl={idx % 2 === 1} />
-                ))}
-              </div>
+              {features.map((props, idx) => (
+                <Feature key={idx} {...props} rtl={idx % 2 === 1} />
+              ))}
             </div>
           </section>
         : null}
