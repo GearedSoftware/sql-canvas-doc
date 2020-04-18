@@ -97,8 +97,8 @@ function Feature({imageUrl, title, description, demo, rtl}) {
   return (    
     <div className={classnames('section', styles.block)}>  
       <div className={classnames('row', styles.heroBanner)}> 
-        {rtl ? imgDiv : txtDiv}
-        {rtl ? txtDiv : imgDiv}
+      {rtl ? <Fade left {...fadeProps}>{imgDiv}{txtDiv}</Fade>
+            : <Fade right {...fadeProps}>{txtDiv}{imgDiv}</Fade>} 
       </div>
     </div>
   );
