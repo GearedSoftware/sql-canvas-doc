@@ -74,9 +74,9 @@ const fadeProps = {delay: 650, duration: 1500};
 function Feature({imageUrl, title, description, demo, rtl}) {
   const imgUrl = useBaseUrl(imageUrl);
   const imgDiv = (
-      <div className={classnames('col')}>
+      <div className={classnames('col', styles.featureImage)}>
         {imgUrl && (
-          <div className={classnames(styles.featureImage)}>
+          <div>
             <img className={styles.featureImage} src={imgUrl} alt={title} />
           </div>
         )}      
