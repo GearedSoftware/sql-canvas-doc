@@ -68,7 +68,7 @@
 
 .featureImage {
   max-height: 400px;
-  text-align: center;
+  /* text-align: center; */
   z-index: -1;
 }
 
