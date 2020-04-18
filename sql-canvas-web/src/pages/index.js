@@ -129,10 +129,7 @@ function Home() {
             <div className="container">
               <div className="column">
                 {features.map((props, idx) => (
-                  <React.Fragment>
-                    <Feature key={idx} {...props} rtl={idx % 2 === 1} />
-                    <hr/>
-                  </React.Fragment>
+                  <Feature key={idx} {...props} rtl={idx % 2 === 1} />
                 ))}
               </div>
             </div>
