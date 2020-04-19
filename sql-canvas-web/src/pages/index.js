@@ -108,6 +108,8 @@ function Feature({imageUrl, title, description, demo, rtl}) {
 function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
+  // DO NOT USE global or window.innerWidth, debug work but build scew up all classnames
+  // const w = global.innerWidth;
   return (
     <Layout
       title={`Home`}
