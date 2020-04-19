@@ -87,6 +87,6 @@
 }
 
 .demoImage {
-  max-height: 750px;
+  max-height: calc(75vh);
   text-align: center;
 }
