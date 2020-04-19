@@ -103,7 +103,6 @@ function Feature({imageUrl, title, description, demo, rtl}) {
 function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
-  const w = Number(global.innerWidth);
   return (
     <Layout
       title={`Home`}
@@ -124,11 +123,11 @@ function Home() {
         <section className={styles.features}>
           <div className="container">            
             <Feature {...features[0]}/>
-            <Feature {...features[1]} rtl={w > 1000} />
+            <Feature {...features[1]} rtl/>
             <Feature {...features[2]}/>
-            <Feature {...features[3]} rtl={w > 1000} />
+            <Feature {...features[3]} rtl/>
             <Feature {...features[4]}/>
-            <Feature {...features[5]} rtl={w > 1000} />
+            <Feature {...features[5]} rtl/>
           </div>
         </section>
       </main>
