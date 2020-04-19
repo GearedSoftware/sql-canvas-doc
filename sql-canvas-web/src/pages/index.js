@@ -126,8 +126,11 @@ function Home() {
         <section className={styles.features}>
           <div className="container">            
             <Feature {...features[0]}/>
+            <br/>
             <Feature {...features[1]} rtl={w > 1000} />
+            <br/>
             <Feature {...features[2]}/>
+            <br/>
             <Feature {...features[3]} rtl={w > 1000} />
             <Feature {...features[4]}/>
             <Feature {...features[5]} rtl={w > 1000} />
