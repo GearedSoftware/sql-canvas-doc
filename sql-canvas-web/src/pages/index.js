@@ -63,7 +63,7 @@ const features = [
     imageUrl: 'img/landing/minhhoa5.png',
     description: (
       <>
-        We can provide specialised build to fit your organisation need, from import/export, object visualisations to protected cloud, data integration, and more. Please contact us.
+        Specialised build can be provided to fit your organisation need, from import/export, object visualisations to protected cloud, data integration, and more. Please contact us.
       </>
     )
   },
