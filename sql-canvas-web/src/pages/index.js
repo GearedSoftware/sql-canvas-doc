@@ -98,8 +98,8 @@ function Feature({imageUrl, title, description, demo, rtl}) {
   });
   return (    
     <div className={classnames('section', styles.block)}>  
-      <div className={rowClass}> 
-        {txtDiv}{imgDiv}
+      <div className={rowClass}>   
+        <Fade left={rtl ? true : false} right={rtl ? false : true} {...fadeProps}>{txtDiv}{imgDiv}</Fade>
       </div>
     </div>
   );
@@ -126,13 +126,10 @@ function Home() {
       </header>
       <main>
         <section className={styles.features}>
-          <div className="container">            
-            <Feature {...features[0]}/>
-            <Feature {...features[1]} rtl/>
-            <Feature {...features[2]}/>
-            <Feature {...features[3]} rtl/>
-            <Feature {...features[4]}/>
-            <Feature {...features[5]} rtl/>
+          <div className="container">   
+            {features.map((props, idx) => (
+              <Feature key={idx} {...props} rtl={idx % 2 === 1} />
+            ))}
           </div>
         </section>
       </main>
