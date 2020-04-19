@@ -74,7 +74,7 @@ const fadeProps = {delay: 650, duration: 1500};
 function Feature({imageUrl, title, description, demo, rtl}) {  
   const imgUrl = useBaseUrl(imageUrl);
   const txtDiv = (
-    <div className="col col--4" style={{direction: 'ltr'}}>
+    <div className={classnames("col col--4", styles.featureText)} style={{direction: 'ltr'}}>
       <h2>{title}</h2>
       <p>{description}</p>
       {demo 
