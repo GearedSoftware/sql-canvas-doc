@@ -83,17 +83,22 @@ function Feature({imageUrl, title, description, demo, rtl}) {
         </Popup>
       : null}
     </div>
-  )
+  );
   const imgDiv = (
     <div className="col col--8" style={{textAlign: "center", zIndex: -1}}>
       <div >
         {imgUrl ? <img class={styles.featureImage} src={imgUrl} alt={title} /> : null} 
       </div>
     </div>
-  )
+  );
+  const rowClass = classnames({
+    ['row']: true,
+    [styles.heroBanner]: true,
+    [styles.rtl]: rtl
+  });
   return (    
     <div className={classnames('section', styles.block)}>  
-      <div className={classnames('row', styles.heroBanner)} style={{direction: rtl ? 'rtl ': 'ltr'}}> 
+      <div className={rowClass}> 
         {txtDiv}{imgDiv}
       </div>
     </div>

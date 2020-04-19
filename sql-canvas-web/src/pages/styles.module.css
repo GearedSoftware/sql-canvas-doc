@@ -27,9 +27,16 @@
   z-index: 0;
 }
 
+.rtl {
+  direction: rtl;
+}
+
 @media screen and (max-width: 966px) {
   .heroBanner {
     padding: 2rem;
+  }
+  .rtl {
+    direction: ltr;
   }
 }
 
