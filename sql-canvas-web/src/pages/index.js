@@ -105,7 +105,7 @@ function Feature({imageUrl, title, description, demo, rtl}) {
 function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
-  const w = 1900;
+  const w = global.innerWidth;
   return (
     <Layout
       title={`Home`}
@@ -123,15 +123,16 @@ function Home() {
         </div>
       </header>
       <main>
-        {features && features.length 
-        ? <section className={styles.features}>
-            <div className="container">
-              {features.map((props, idx) => (
-                <Feature key={idx} {...props} rtl={w && idx % 2 === 1} />
-              ))}
-            </div>
-          </section>
-        : null}
+        <section className={styles.features}>
+          <div className="container">            
+            <Feature {...features[0]}/>
+            <Feature {...features[1]} rtl={w > 1000} />
+            <Feature {...features[2]}/>
+            <Feature {...features[3]} rtl={w > 1000} />
+            <Feature {...features[4]}/>
+            <Feature {...features[5]} rtl={w > 1000} />
+          </div>
+        </section>
       </main>
     </Layout>
   );
