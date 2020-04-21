@@ -31,11 +31,13 @@ PostgreSQL, also known as Postgres, is a free and open-source relational databas
 
 * Plugin Version: 7.18.2
 
-## IBM DB2
+## IBM DB2 <img height="25" alt="Postgre Logo" src="/img/icons/db2.png"/>
 
-Coming Soon.
+Db2 is a family of data management products, including database servers, developed by IBM. They initially supported the relational model, but were extended to support object-relational features and non-relational structures like JSON and XML. The brand name was originally styled as DB/2[2], then DB2[3][4][5] until 2017[6] and finally changed to its present form.  [Wikipedia](https://en.wikipedia.org/wiki/IBM_Db2_Family)
 
 * Plugin: [node-ibm_db](https://www.npmjs.com/package/ibm_db)
+
+* Plugin Version: 2.6.4
 
 ## Oracle 
 

@@ -10,6 +10,6 @@ module.exports = {
     Docs: ['dbms', 'installation'],
     Tutorials: ['tutorials/canvas','tutorials/connection','tutorials/customization', 'tutorials/export','tutorials/history','tutorials/file','tutorials/schema','tutorials/save','tutorials/select', 'tutorials/update'],
     APIs: ['api/connection', 'api/data', 'api/schema', 'api/sql'],
-    "Knowledge Base": ['knowledge/mysql', 'knowledge/mssql', 'knowledge/postgre'],
+    "Knowledge Base": ['knowledge/db2', 'knowledge/mysql', 'knowledge/mssql', 'knowledge/postgre'],
   },
 };

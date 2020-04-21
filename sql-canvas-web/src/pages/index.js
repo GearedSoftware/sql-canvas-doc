@@ -15,7 +15,7 @@ const features = [
     imageUrl: 'img/landing/minhhoa1.png',
     description: (
       <>
-        Visualise your data objects and relationships with an interactive HTML canvas allowing you to access, discover and investigate your databases.
+        Visualise your data objects and relationships with an interactive HTML canvas allowing you to access, discover and investigate your data relationships with ease.
       </>
     ),
     demo: "img/landing/demo_visual.gif"
@@ -25,7 +25,7 @@ const features = [
     imageUrl: 'img/landing/minhhoa2.png',
     description: (
       <>
-        Quickly build Structured Query Language (SQL) using our SQL Builder covering simple to complex statements to retrieve data, visually browse data objects and discover relationships with ease.
+        Quickly build Structured Query Language (SQL) using our SQL Builder covering simple to complex statements to retrieve data.
       </>
     ),
     demo: "img/landing/demo_select_builder.gif"
@@ -45,7 +45,7 @@ const features = [
     imageUrl: 'img/landing/minhhoa3.png',
     description: (
       <>
-        Utilising a secure centralised host access point we enable to your data and visual canvas on any device to help others in your organisation understand your data findings.
+        Utilising a secure centralised host access point we can visualise your data on any device to help others in your organisation understand your data findings.
       </>
     )
   },
@@ -54,7 +54,7 @@ const features = [
     imageUrl: 'img/landing/dbms.png',
     description: (
       <>
-        We support the most common used DBMS including MySQL, Microsoft SQL and Postgresql with an ever-increasing pipeline of development to cover IBM DB2, Oracle, SAP HANA and MongoDb.
+        We support the most common used DBMS including IBM Db2, MySQL, Microsoft SQL and Postgresql with an ever-increasing pipeline of development to cover Oracle, SAP HANA and MongoDb, etc.
       </>
     )
   },
@@ -63,7 +63,7 @@ const features = [
     imageUrl: 'img/landing/minhhoa5.png',
     description: (
       <>
-        Specialised build can be provided to fit your organisation need, from import/export, object visualisations to protected cloud, data integration, and more. Please contact us.
+        Specialised build can be provided to fit your organisation need, from import/export, object visualisations to protected cloud, data integration, and more. Please contact us with your requirements.
       </>
     )
   },
