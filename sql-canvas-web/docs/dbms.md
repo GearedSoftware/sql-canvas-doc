@@ -45,19 +45,7 @@ It is a database commonly used for running online transaction processing (OLTP),
 
 * Plugin: [node-oracledb](https://www.npmjs.com/package/oracledb)
 
-* Pre-requirements:
-
-> Node-oracledb installation instructions: https://oracle.github.io/node-oracledb/INSTALL.html
-You must have 64-bit Oracle client libraries in your PATH environment variable.
-If you do not have Oracle Database on this computer, then install the Instant Client Basic or Basic Light package from     
-http://www.oracle.com/technetwork/topics/winx64soft-089540.html
-A Microsoft Visual Studio Redistributable suitable for your Oracle client library version must be available.
-
-> Oracle 19, 18, 12.2, 12.1 or 11.2 client libraries on the machine Node.js is installed on.
-
-> Run node -p "process.arch" and make sure to use 64-bit or 32-bit Oracle client libraries to match the Node.js architecture.
-
-> Oracle client libraries are included in Oracle Instant Client RPMs or ZIPs, a full Oracle Client, or a database on the same machine. You only need one of these installations.
+* Pre-requirements: You must have 64-bit Oracle client libraries in your PATH environment variable on Windows or LD_LIBRARY_PATH on Linux [Instruction](https://oracle.github.io/node-oracledb/INSTALL.html)
 
 > Oracle’s standard client-server network interoperability allows connections between different versions of Oracle Client and Oracle Database. For certified configurations see Oracle Support’s Doc ID 207303.1. In summary, Oracle Client 19, 18 and 12.2 can connect to Oracle Database 11.2 or greater. Oracle Client 12.1 can connect to Oracle Database 10.2 or greater. Oracle Client 11.2 can connect to Oracle Database 9.2 or greater. The technical restrictions on creating connections may be more flexible. For example Oracle Client 12.2 can successfully connect to Oracle Database 10.2.
 
