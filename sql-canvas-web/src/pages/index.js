@@ -54,7 +54,7 @@ const features = [
     imageUrl: 'img/landing/dbms.png',
     description: (
       <>
-        We support the most common used DBMS including IBM Db2, MySQL, Microsoft SQL and Postgresql with an ever-increasing pipeline of development to cover Oracle, SAP HANA and MongoDb, etc.
+        We support the most 5 commonly used DBMS including IBM Db2, MySQL, Microsoft SQL Server, Oracle and Postgresql with an ever-increasing pipeline of development to cover MongoDb, SAP HANA, Teradata, etc.
       </>
     )
   },

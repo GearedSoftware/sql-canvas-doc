@@ -31,7 +31,7 @@ PostgreSQL, also known as Postgres, is a free and open-source relational databas
 
 * Plugin Version: 7.18.2
 
-## IBM DB2 <img height="25" alt="Postgre Logo" src="/img/icons/db2.png"/>
+## IBM DB2 <img height="25" alt="Db2 Logo" src="/img/icons/db2.png"/>
 
 Db2 is a family of data management products, including database servers, developed by IBM. They initially supported the relational model, but were extended to support object-relational features and non-relational structures like JSON and XML. The brand name was originally styled as DB/2[2], then DB2[3][4][5] until 2017[6] and finally changed to its present form.  [Wikipedia](https://en.wikipedia.org/wiki/IBM_Db2_Family)
 
@@ -39,11 +39,27 @@ Db2 is a family of data management products, including database servers, develop
 
 * Plugin Version: 2.6.4
 
-## Oracle 
+## Oracle <img height="25" alt="Oracle Logo" src="/img/icons/oracle.png"/>
 
-Coming Soon.
+It is a database commonly used for running online transaction processing (OLTP), data warehousing (DW) and mixed (OLTP & DW) database workloads. The latest generation, Oracle Database 19c, is available on-prem, on-cloud, or in a hybrid-Cloud environment. 19c may also be deployed on Oracle Engineered Systems (e.g. Exadata) on-prem, on Oracle (public) cloud or (private) cloud at customer. [Wikipedia](https://en.wikipedia.org/wiki/Oracle_Database)
 
 * Plugin: [node-oracledb](https://www.npmjs.com/package/oracledb)
+
+* Pre-requirements:
+
+> Node-oracledb installation instructions: https://oracle.github.io/node-oracledb/INSTALL.html
+You must have 64-bit Oracle client libraries in your PATH environment variable.
+If you do not have Oracle Database on this computer, then install the Instant Client Basic or Basic Light package from     
+http://www.oracle.com/technetwork/topics/winx64soft-089540.html
+A Microsoft Visual Studio Redistributable suitable for your Oracle client library version must be available.
+
+> Oracle 19, 18, 12.2, 12.1 or 11.2 client libraries on the machine Node.js is installed on.
+
+> Run node -p "process.arch" and make sure to use 64-bit or 32-bit Oracle client libraries to match the Node.js architecture.
+
+> Oracle client libraries are included in Oracle Instant Client RPMs or ZIPs, a full Oracle Client, or a database on the same machine. You only need one of these installations.
+
+> Oracle’s standard client-server network interoperability allows connections between different versions of Oracle Client and Oracle Database. For certified configurations see Oracle Support’s Doc ID 207303.1. In summary, Oracle Client 19, 18 and 12.2 can connect to Oracle Database 11.2 or greater. Oracle Client 12.1 can connect to Oracle Database 10.2 or greater. Oracle Client 11.2 can connect to Oracle Database 9.2 or greater. The technical restrictions on creating connections may be more flexible. For example Oracle Client 12.2 can successfully connect to Oracle Database 10.2.
 
 ## MongoDB
 

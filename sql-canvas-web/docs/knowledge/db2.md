@@ -1,6 +1,6 @@
 ---
 id: db2
-title: IBM Db2
+title: IBM DB2
 ---
 
 ### Constants
@@ -35,16 +35,12 @@ select authid as username
         c.colno as column_id,
         c.typename as data_type,
         case when c.typename = 'VARCHAR' then c.length else NULL end as max_length,
-        c.scale,
-        c.remarks as description,   
         case when c.nulls = 'Y' then 1 else 0 end as is_nullable,
         default as column_default,
-        case when c.identity ='Y' then 1 else 0 end as is_identity,
-        case when c.generated ='' then 0 else 1 end as is_auto_increment,
-        c.text as computed_formula
+        case when c.identity = 'Y' then 1 else 0 end as auto_increment
    from syscat.columns c
   inner join syscat.tables t on t.tabschema = c.tabschema and t.tabname = c.tabname
-  where t.type = 'T' and c.tabschema = UPPER(?)
+  where t.type = 'T' and c.tabschema = ?
   order by schema_name, table_name, column_id
 ```
 
@@ -60,7 +56,7 @@ select authid as username
    from syscat.tables tab
   inner join syscat.tabconst const on const.tabschema = tab.tabschema and const.tabname = tab.tabname and const.type = 'P'
   inner join syscat.keycoluse key on const.tabschema = key.tabschema and const.tabname = key.tabname and const.constname = key.constname     
-  where tab.type = 'T' and tab.tabschema = UPPER(?)
+  where tab.type = 'T' and tab.tabschema = ?
   order by const.constname
 ```
 
@@ -78,7 +74,7 @@ select authid as username
           where keypk.tabschema = ref.reftabschema and keypk.tabname = ref.reftabname and keypk.constname = ref.refkeyname
         ) AS pk_columns
    from syscat.references ref
-  where ref.tabschema = UPPER(?)
+  where ref.tabschema = ?
 ```
 
 ### Sample Error Object
