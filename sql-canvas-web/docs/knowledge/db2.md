@@ -8,9 +8,14 @@ title: IBM DB2
 const IGNORE_SCHEMAS = `('SQLJ', 'NULLID')`;
 ```
 
+### Dummy Test Select
+```js
+ select 1 from sysibm.sysdummy1
+```
+
 ### Retrieve User's Permissions
 ```js
-select authid as username
+ select authid as username
   from sysibmadm.authorizationids a
   left join syscat.dbauth d
     on d.grantee = a.authid
@@ -32,12 +37,12 @@ select authid as username
  select c.tabschema as schema_name,
         c.tabname as table_name, 
         c.colname as column_name,
-        c.colno as column_id,
+        (c.colno + 1) as column_id,
         c.typename as data_type,
         case when c.typename = 'VARCHAR' then c.length else NULL end as max_length,
         case when c.nulls = 'Y' then 1 else 0 end as is_nullable,
         default as column_default,
-        case when c.identity = 'Y' then 1 else 0 end as auto_increment
+        case when c.identity = 'Y' then 1 else 0 end as is_identity
    from syscat.columns c
   inner join syscat.tables t on t.tabschema = c.tabschema and t.tabname = c.tabname
   where t.type = 'T' and c.tabschema = ?

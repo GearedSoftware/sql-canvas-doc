@@ -8,6 +8,11 @@ title: Oracle Database
 const IGNORE_SCHEMAS = `('APPQOSSYS','CTXSYS','DBSNMP','DIP','OUTLN','RDSADMIN','SYS','SYSTEM')`;
 ```
 
+### Dummy Test Select
+```js
+ select 1 from dual
+```
+
 ### Retrieve User's Permissions
 ```js
 select * from user_sys_privs where username = UPPER(:username)
@@ -22,7 +27,7 @@ select * from user_sys_privs where username = UPPER(:username)
 
 ### Retrieve Columns BY Schema
 ```js
- select col.owner as schema_name,
+select col.owner as schema_name,
         col.table_name, 
         col.column_name, 
         col.column_id, 
@@ -31,7 +36,7 @@ select * from user_sys_privs where username = UPPER(:username)
         col.data_default column_default, 
         case when col.data_type in('VARCHAR', 'VARCHAR2') then col.data_length else NULL end as max_length,
         col.data_precision precision,
-        case when d.name is not null then 1 else 0 end as auto_increment
+        case when d.name is not null then 1 else 0 end as is_identity
    from sys.all_tab_columns col
   inner join sys.all_tables t on col.owner = t.owner and col.table_name = t.table_name
    left join sys.all_trigger_cols tr on tr.table_owner = col.owner and tr.table_name = col.table_name and tr.column_name = col.column_name
@@ -56,7 +61,7 @@ select * from user_sys_privs where username = UPPER(:username)
 
 ### Retrieve Foreign Keys BY Schema
 ```js
-select a_col.constraint_name constraint_name,
+ select a_col.constraint_name constraint_name,
         a_col.table_name foreign_table,       
         c_col.table_name primary_table,
         LISTAGG(a_col.column_name, ', ') WITHIN GROUP (ORDER BY a_col.position) fk_columns,

@@ -9,10 +9,15 @@ sidebar_label: PostgreSQL
 const IGNORE_SCHEMAS="('information_schema', 'pg_catalog', 'pg_temp_1', 'pg_toast' ,'pg_toast_temp_1')";
 ```
 
+### Dummy Test Select
+```js
+ select 1 as test
+```
+
 ### Retrieve User's Permissions
 ```js
  select grantee AS username, CONCAT(table_schema, '.', table_name) AS table, 
-   case when COUNT(privilege_type) = 7 then 'ALL' else ARRAY_TO_STRING(ARRAY_AGG(privilege_type), ', ') end AS grants
+        case when COUNT(privilege_type) = 7 then 'ALL' else ARRAY_TO_STRING(ARRAY_AGG(privilege_type), ', ') end AS grants
    from information_schema.role_table_grants
   where grantee = $1
   group by table_name, table_schema, grantee
@@ -36,6 +41,7 @@ const IGNORE_SCHEMAS="('information_schema', 'pg_catalog', 'pg_temp_1', 'pg_toas
         data_type as data_type,
         is_nullable as is_nullable,
         column_default as column_default,
+        is_identity as is_identity,
         case when character_maximum_length is not null then character_maximum_length else numeric_precision end as max_length
   from information_schema.columns
  where table_schema = $1
@@ -63,8 +69,8 @@ const IGNORE_SCHEMAS="('information_schema', 'pg_catalog', 'pg_temp_1', 'pg_toas
         kcu.table_name as foreign_table,
         rel_kcu.table_name as primary_table,
         kcu.ordinal_position as no,
-        string_agg(kcu.column_name,', ') as fk_column,
-        string_agg(rel_kcu.column_name,', ') as pk_column
+        string_agg(kcu.column_name,', ') as fk_columns,
+        string_agg(rel_kcu.column_name,', ') as pk_columns
    from information_schema.table_constraints tco
    join information_schema.key_column_usage kcu on tco.constraint_schema = kcu.constraint_schema
     and tco.constraint_name = kcu.constraint_name
