@@ -31,6 +31,8 @@ PostgreSQL, also known as Postgres, is a free and open-source relational databas
 
 * Plugin Version: 7.18.2
 
+* Pre-requirements: You must have Db2 client libraries in your PATH and LIB environment variables on Windows (e.g. PATH="...;C:\Apps\IBM\SQLLIB\BIN" and LIB="...;C:\Apps\IBM\SQLLIB\LIB"). [DB2 11.5 Clients and Drivers](https://www.ibm.com/support/pages/download-initial-version-115-clients-and-drivers)
+
 ## IBM DB2 <img height="25" alt="Db2 Logo" src="/img/icons/db2.png"/>
 
 Db2 is a family of data management products, including database servers, developed by IBM. They initially supported the relational model, but were extended to support object-relational features and non-relational structures like JSON and XML. The brand name was originally styled as DB/2[2], then DB2[3][4][5] until 2017[6] and finally changed to its present form.  [Wikipedia](https://en.wikipedia.org/wiki/IBM_Db2_Family)
@@ -44,6 +46,8 @@ Db2 is a family of data management products, including database servers, develop
 It is a database commonly used for running online transaction processing (OLTP), data warehousing (DW) and mixed (OLTP & DW) database workloads. The latest generation, Oracle Database 19c, is available on-prem, on-cloud, or in a hybrid-Cloud environment. 19c may also be deployed on Oracle Engineered Systems (e.g. Exadata) on-prem, on Oracle (public) cloud or (private) cloud at customer. [Wikipedia](https://en.wikipedia.org/wiki/Oracle_Database)
 
 * Plugin: [node-oracledb](https://www.npmjs.com/package/oracledb)
+
+* Plugin Version: 4.2.0
 
 * Pre-requirements: You must have 64-bit Oracle client libraries in your PATH environment variable on Windows or LD_LIBRARY_PATH on Linux [Instruction](https://oracle.github.io/node-oracledb/INSTALL.html)
 
